@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .modalTop{
+            width: 290px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 0 0 10px 10px;
+            border-top: 6px solid #24420C;
+        }
+        .modalTop select{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 8px 0;
+            background-color: #efefef;
+            border: none;
+        }
+        .head_modalTop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .head_modalTop h2{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px;
+            background-color: #4E882C;
+            color: #ffffff;
+            margin: 0;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .over_modalTop{
+            position: fixed;
+            top: -110%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 10, 10, .7);
+            display: flex;
+            opacity: 0;
+            transition: opacity .23s;
+        }
+        .open_modalTop{
+            top: 0;
+            opacity: 1;
+            margin: auto;
+        }
+        #btn_close_modalTop{
+            cursor: pointer;
+        }
+         .btn{
+            width: calc(80% - 10px);
+            margin: 10px auto;
+            background-color: #dcdcdc;
+            color: #0B0B0B;
+            padding: 10px 18px;
+            text-align: center;
+            border-radius: 10px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-black{
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .content_modalTop{
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+
+
+    <div class="over_modalTop">
+        <div class="modalTop">
+            <div class="head_modalTop">
+                <h2>Aviso</h2>
+
+            </div>
+            <div class="content_modalTop">
+                <p>Nosso site está em processo de atualização, caso sinta alguma lentidão ou atraso é normal</p>
+            </div>
+
+            <button class="btn btn-black" id="btn_close_modalTop">
+                Ok
+            </button>
+        </div>
+    </div>
+
+    <script>
+         //====== btn  =======
+         const btn = document.getElementById('open_modalTop');
+           
+            document.querySelector('.over_modalTop').addEventListener('click',(e) => {
+                if(e.target.classList.contains('open_modalTop') && e.target.nodeType == 1){
+
+                    document.querySelector('.over_modalTop').classList.remove('open_modalTop')
+                }
+            });
+            document.getElementById('btn_close_modalTop').addEventListener('click', () => {
+                document.querySelector('.over_modalTop').classList.remove('open_modalTop')
+            });
+    </script>
+    
+
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("warning_saojose");
+            if (user == "") {
+                
+                setCookie("warning_saojose", "visit", .1);
+                return true
+            }else{
+                return false
+            }
+        }
+        if(checkCookie()){
+            document.querySelector('.over_modalTop').classList.add('open_modalTop')
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+
+.barra_header_topo{
+    width: 100%;
+}
+.barra_header{
+    
+}
+#header{
+    height: calc(100vh - 60px);
+    background-image: unset;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTomXCOr2eQ0K1U7c3J7yVsLFRMbUm9jBtFLbd4d7jmG3OLJZaLfR_mLW1SqBNmSJaKqv8&usqp=CAU');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
