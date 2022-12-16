@@ -25,6 +25,7 @@
     <link media="all" href="css/custom-sjd.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick-theme.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="custom.css">
@@ -40,33 +41,43 @@
 				<div class="barra_header_left">
 
 					<ul id="accessibility">
-						<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">E-SIC</a></li>
+						<li><a href="https://www.saojosedodivino.pi.leg.br/sitemap" target="_blank" title="Mapa do Site">Sitemap</a></li>
 						
-						 <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">OUVIDORIA</a></li>
+						 <li><a href="https://saojosedodivino.pi.leg.br/accessibility-info" target="_blank" title="Acessibilidade">Acessibilidade</a></li>
+
+                         <li id="siteaction-contraste"><a href="#" accesskey="" title="Ligar ou desligar o contraste"><i class="fas fa-adjust portal-siteactions-awesome"></i></a></li>
+
+                         <li id="siteaction-fontlarge"><a href="javascript:setBaseFontSize('smallText',1);" title="Aumentar Fonte">A+</a></li>
+
+                         <li id="siteaction-fontnormal" class="last-item"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
+
+                         <li id="siteaction-vlibras"><a href="http://www.vlibras.gov.br/" accesskey="" title="Acesso ao conteúdo usando o VLibras"><i class="fas fa-sign-language portal-siteactions-awesome"></i></a></li>
 
 						 <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
 						
 						<li><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/legislacao-municipal" target="_self" title="Legislação municipal">LEGISLAÇÃO</a>
 						</li>
-
-						<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">CARTA DE SERVIÇOS</a></li>
-
-						<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
+						
 					</ul>
 				</div>
 
 				<div class="barra_header_right">
+                    <div id="portal-searchbox" role="search" class="d-none">
+                        <form>
+            
+                            <input type="text" id="searchGadget" class="searchField" accesskey="3" placeholder="Buscar no portal" title="Buscar no portal" size="18" name="SearchableText" autocomplete="off">
+                            <input type="submit" value="Buscar" class="searchButton">
+                        </form>
+                    </div>
+                    
 
 					<ul class="icons-acessibilidade-right">
-						<li id="siteaction-sitemap"><a href="https://saojosedodivino.pi.leg.br/accessibility-info" accesskey="" title="Acessibilidade">ACESSIBILIDADE</a></li>
+						<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
 
-
-						<li id="siteaction-vlibras"><a href="http://www.vlibras.gov.br/" accesskey="" title="Acesso ao conteúdo usando o VLibras"><i class="fas fa-sign-language portal-siteactions-awesome"></i></a></li>
-
-						<li id="siteaction-contraste"><a href="#" accesskey="" title="Ligar ou desligar o contraste"><i class="fas fa-adjust portal-siteactions-awesome"></i></a></li>
-
-						<li id="siteaction-fontlarge"><a href="javascript:setBaseFontSize('smallText',1);" title="Aumentar Fonte">A+</a></li>
-
+                        <li><a href="https://www.saojosedodivino.pi.leg.br/contact-info" target="_self" title="Contato">CONTATO</a>
+						</li>
+                        
+						
 						<li id="siteaction-fontnormal"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
 					</ul>
 				</div>
@@ -76,7 +87,7 @@
 
 
          
-    <div id="user">
+    <div id="user" class="d-none">
         <ul>
             <li>
                 <a href="#" title="Login">Login</a>
@@ -89,55 +100,65 @@
         
         <!-- HEADER -->
 
-        <div id="header" role="banner">
+        <div class="hero" id="header" role="banner">
         
-                
-        <div>
+            <!-- top hero -->
+            <div class="hero_content">
+                <div class="hero_top">
+                    <div id="logo">
+                        <a href="#" title="#">
+                            <span id="portal-title">Portal Title</span>
+                            <span id="portal-description" class="d-none">Portal description</span>
+                        </a>
             
-             
-           
-        <div id="logo">
-            <a href="#" title="#">
-                <span id="portal-title">Portal Title</span>
-                <span id="portal-description">Portal description</span>
-            </a>
+                    </div>
+    
+                    <div id="sobre" class="menu menu_dub">
+                        <ul>
+                            <li id="link-sobre">
+                                <a href="#">Sobre o Brasil</a>
+                            </li>
+                            <li id="link-central">
+                                <a href="#">Central de Imprensa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        </div>
+                <div class="hero_center">
+                    <h1>CÂMARA MUNICIPAL DE SÃO JOSÉ DO DIVINO</h1>
+                </div>
 
-        <div id="portal-searchbox" role="search">
-            <form>
+                <div class="over_redes_sociais">
+                    <!--redes sociais-->
+                    <div class="redes_sociais_header">
+                        <a href="https://www.youtube.com/camarasjd" target="_blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
+                        <a href="https://www.facebook.com/camarasjd" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/camarasjd/" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/camarasjd" target="_blank" title="Instagran"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.flickr.com/photos/camarasjd" target="_blank" title="Flickr"><i class="fab fa-flickr"></i></a>
+                        <a href="http://www.saojosedodivino.pi.leg.br/rss-info" target="_blank" title="Assine os canais RSS"><i class="fas fa-rss-square"></i></a>
+                        <!-- <a href="https://wa.me/message/5FOIK3SBWXNZG1" target="_blank" title="Converse pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>-->
+                    </div>   
+                </div>
 
-                <input type="text" id="searchGadget" class="searchField" accesskey="3" placeholder="Buscar no portal" title="Buscar no portal" size="18" name="SearchableText" autocomplete="off">
-                <input type="submit" value="Buscar" class="searchButton"></form>
+
+                <div class="header_bottom">
+                    <ul class="list_menu_bottom">
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
+                        
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">CARTA DE SERVIÇOS</a></li>
+
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">OUVIDORIA</a></li>
+
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">E-SIC</a></li>
+
+                        <li id="portaltab-sapl" class="plain last-item"><a href="https://sapl.saojosedodivino.pi.leg.br/" title="Sistema apoio ao processo legislativo">SAPL</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <!--redes sociais-->
-         <div class="redes_sociais_header">
-                <a href="https://www.youtube.com/camarasjd" target="_blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
-                <a href="https://www.facebook.com/camarasjd" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://twitter.com/camarasjd/" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></a>
-                <a href="https://www.instagram.com/camarasjd" target="_blank" title="Instagran"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.flickr.com/photos/camarasjd" target="_blank" title="Flickr"><i class="fab fa-flickr"></i></a>
-                <a href="http://www.saojosedodivino.pi.leg.br/rss-info" target="_blank" title="Assine os canais RSS"><i class="fas fa-rss-square"></i></a>
-               <!-- <a href="https://wa.me/message/5FOIK3SBWXNZG1" target="_blank" title="Converse pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>-->
-
-          
-        </div> 
-            
         </div>
-        
-        <div id="sobre" class="menu">
-            <ul>
-                <li id="link-sobre">
-                    <a href="#">Sobre o Brasil</a>
-                </li>
-                <li id="link-central">
-                    <a href="#">Central de Imprensa</a>
-                </li>
-            </ul>
-        </div>
-        
-    </div>
     
     <!-- content -->
 

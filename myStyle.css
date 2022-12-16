@@ -1,18 +1,157 @@
 
 
+/* ================================== barra superior ============================= */
+:root{
+    --color-main: #69B652;
+    --color-dark-main: #365e2a;
+
+    --color-white: #ffffff;
+    --color-black: #000000
+}
+
+/* general style */
+.d-none{
+    display: none!important;
+}
+/* general style */
+
+
 .barra_header_topo{
     width: 100%;
 }
 .barra_header{
-    
+    font-size: 12px;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-main);
+    border-bottom: 1px solid var(--color-dark-main);
 }
+.barra_header a{
+    color: var(--color-white)!important;
+}
+.icons-acessibilidade-right li a{
+    color: var(--color-white)!important;
+}
+.barra_header_left{
+    display: flex;
+}
+.barra_header_left a{
+    font-weight: 600;
+}
+.barra_header_left ul#accessibility{
+    display: flex!important;
+}
+.barra_header_left ul li a{
+    text-decoration: none;
+    padding: 2px 10px;
+    text-transform: uppercase;
+}
+.barra_header_right{
+    display: flex;
+}
+.barra_header_right ul{
+    display: flex;
+}
+.barra_header_right ul li a{
+    text-decoration: none;
+    font-weight: 500;
+}
+/* ================================== barra superior ============================= */
 #header{
     height: calc(100vh - 60px);
     background-image: unset;
     background-color: #ffffff;
-    border: 1px solid #000;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTomXCOr2eQ0K1U7c3J7yVsLFRMbUm9jBtFLbd4d7jmG3OLJZaLfR_mLW1SqBNmSJaKqv8&usqp=CAU');
+    background-image: url('https://www.enfconcursos.com//uploads/sites/1/2019/05/_15584596425ce434fa890cd.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    padding: 0;
+    display: flex;
+}
+#header > div{
+    max-width: 100%;
+    padding: 10px;
+}
+.hero_content{
+    height: calc(100% - 20px);;
+    width: 100%;
+    margin: auto;
+    padding: 30px 10px;
+    background-color: rgba(10, 10, 10, .5);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: relative;
+}
+#sobre{
+    background-color: transparent;
+}
+
+.hero_top{
+    max-width: 100%;
+    width: 98%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+.hero_center{
+    width: 100%;
+    text-align: center;
+}
+.hero_center h1{
+    color: var(--color-white);
+    font-size: 3em;
+    font-weight: 200;
+
+}
+.header_bottom{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.header_bottom ul{
+    display: flex;
+}
+.header_bottom ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.header_bottom ul li a{
+    font-size: 2em;
+    color: var(--color-white);
+    text-decoration: none;
+}
+.over_redes_sociais{
+    position: absolute;
+    top: calc((100vh - 60px) - 40%);
+    right: 0;
+    border: 1px solid;
+}
+#logo{
+    width: auto;
+}
+#logo span{
+    margin: 0;
+    position: unset;
+}
+#logo a:-webkit-any-link {
+    text-decoration: none;
+}
+.menu_dub ul{
+    display: flex;
+    
+}
+.menu_dub ul li a{
+    text-decoration: none;
+    padding: 2px 18px!important;
+    font-size: 16px;
+    border-right: none!important;
 }
