@@ -21,20 +21,39 @@
     <script src="javascript/slick.min.js" type="text/javascript" ></script>
     <script src="javascript/slick.min.js" type="text/jquery.ticker.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+
     
     <link media="all" href="css/custom-sjd.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick-theme.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/myStyle.css">
     
-    
+
 </head>
 
 <body>
+
+    <div class="search_over">
+        <span class="btn_slose_search" id="btn_slose_search">
+            <i class="bi bi-x-lg"></i>
+        </span>
+        <div class="search_over_content">
+            <div id="portal-searchbox" role="search" class="d-none">
+                <form class="form_search">
+                
+                    <input type="search" id="searchGadget" class="searchField" accesskey="3" placeholder="Buscar no portal" title="Buscar no portal" size="18" name="SearchableText" autocomplete="off">
+                    <button type="submit" value="Buscar" class="searchButton">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
     
     <div class="barra_header_topo">
     		<div class="barra_header">
@@ -62,14 +81,10 @@
 				</div>
 
 				<div class="barra_header_right">
-                    <div id="portal-searchbox" role="search" class="d-none">
-                        <form>
-            
-                            <input type="text" id="searchGadget" class="searchField" accesskey="3" placeholder="Buscar no portal" title="Buscar no portal" size="18" name="SearchableText" autocomplete="off">
-                            <input type="submit" value="Buscar" class="searchButton">
-                        </form>
-                    </div>
-                    
+
+                    <div class="btn_search open_search">
+                        <i class="bi bi-search"></i>
+                    </div>                    
 
 					<ul class="icons-acessibilidade-right">
 						<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
@@ -77,12 +92,56 @@
                         <li><a href="https://www.saojosedodivino.pi.leg.br/contact-info" target="_self" title="Contato">CONTATO</a>
 						</li>
                         
-						
-						<li id="siteaction-fontnormal"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
 					</ul>
 				</div>
 
 			</div>
+            <div class="hero_top">
+                <div id="logo">
+                    <a href="#" title="#">
+                        <span id="portal-title">Portal Title</span>
+                        <span id="portal-description" class="d-none">Portal description</span>
+                    </a>
+        
+                </div>
+
+                <div id="sobre" class="menu menu_dub">
+                    <ul>
+                        <li id="link-sobre" class="has-submenu">
+                            <a href="#">Sobre o Brasil</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="">subitem one</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem two</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem three</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem four</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem four</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem four</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem four</a>
+                                </li>
+                                <li>
+                                    <a href="">subitem four</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="link-central">
+                            <a href="#">Central de Imprensa</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 		</div>
 
 
@@ -104,25 +163,8 @@
         
             <!-- top hero -->
             <div class="hero_content">
-                <div class="hero_top">
-                    <div id="logo">
-                        <a href="#" title="#">
-                            <span id="portal-title">Portal Title</span>
-                            <span id="portal-description" class="d-none">Portal description</span>
-                        </a>
-            
-                    </div>
-    
-                    <div id="sobre" class="menu menu_dub">
-                        <ul>
-                            <li id="link-sobre">
-                                <a href="#">Sobre o Brasil</a>
-                            </li>
-                            <li id="link-central">
-                                <a href="#">Central de Imprensa</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="">
+                    a
                 </div>
 
                 <div class="hero_center">
@@ -145,21 +187,40 @@
 
                 <div class="header_bottom">
                     <ul class="list_menu_bottom">
-                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">
+                            <img src="img/portal-transparencia.png" alt="">
+                        </a></li>
                         
-                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">CARTA DE SERVIÇOS</a></li>
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">
+                            <img src="img/carta-serv.png" alt="">
+                        </a></li>
 
-                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">OUVIDORIA</a></li>
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">
+                            <img src="img/ouvidoria.png" alt="">
+                        </a></li>
 
-                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">E-SIC</a></li>
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">
+                            <img src="img/e-sic.png" alt="">
+                        </a></li>
 
-                        <li id="portaltab-sapl" class="plain last-item"><a href="https://sapl.saojosedodivino.pi.leg.br/" title="Sistema apoio ao processo legislativo">SAPL</a></li>
+                        <li id="portaltab-sapl" class="plain last-item"><a href="https://sapl.saojosedodivino.pi.leg.br/" title="Sistema apoio ao processo legislativo">
+                            <img src="img/sapl.png" alt="">
+                        </a></li>
                     </ul>
                 </div>
             </div>
             
         </div>
+        <script>
+            //======== check home page ==========
+            let url_home = window.location.pathname;
     
+            if(url_home == "/Plone"){
+                document.querySelector('.hero').style.display = "none"
+                document.querySelector('.hero_top').classList.add('bg-dark-green')
+            }
+    
+        </script>
     <!-- content -->
 
     <div id="main" role="main">
@@ -608,5 +669,6 @@
     </script>
 
         <!-- /Footer-->
+        <script src="javascript/theme-script.js"></script>
     </body>
     </html>
