@@ -65,6 +65,21 @@
             height: 100%;
             object-fit: cover;
         }
+        .bottom_galeria{
+            padding: 40px 10px;
+            text-align: center;
+        }
+        .btn_galeria{
+            padding: 10px 30px;
+            background-color: #24420C;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all .23s;
+        }
+        .btn_galeria:hover{
+            transform: scale(1.2)!important;
+        }
 
         /* galeria de imagens */
     </style>
@@ -86,13 +101,20 @@
         <div class="links_galeria">
   
         </div>
+
+        <div class="bottom_galeria">
+            <a class="btn_galeria" href="">Ver Galeria Completa</a>
+        </div>
     </div>
 
     <a id="photo" href="" target="_blank">Acessar</a>
 
     <script>
         
-        let url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=56058990fbfd9e0e91d86e67cfe633d4&user_id=197224598@N03&per_page=6&format=json&nojsoncallback=1';
+        let api_key_fli = '56058990fbfd9e0e91d86e67cfe633d4';
+        let user_id_fli = '197224598@N03';
+
+        let url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+api_key_fli+'&user_id='+user_id_fli+'&per_page=6&format=json&nojsoncallback=1';
         
 
         function loadDoc() {
@@ -102,14 +124,6 @@
                 let dJson = JSON.parse(this.responseText);
 
                 let photos = dJson.photos.photo;
-
-                document.getElementById("demo").innerHTML = dJson.photos.photo[0];
-
-                console.log('contagem: '+dJson.photos.total);
-
-                document.getElementById('photo').setAttribute('href', 'https://flickr.com/photos/'+dJson.photos.photo[0].owner+'/'+dJson.photos.photo[0].id);
-
-                console.log(dJson);
 
                 // ============== add to galeria ============================
                 for(let n = 0; n < dJson.photos.total; n++){
