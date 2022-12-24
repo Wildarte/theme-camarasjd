@@ -7,9 +7,13 @@
     --color-yellow: #FEF086;
 
     --color-white: #ffffff;
-    --color-black: #000000
-}
+    --color-black: #000000;
 
+    --container: 1200px
+}
+body{
+    overflow-x: hidden;
+}
 /* general style */
 .d-none{
     display: none!important;
@@ -20,6 +24,15 @@
 }
 .bg-dark-green a{
     color: #232323!important;
+}
+#main{
+    max-width: var(--container);
+    margin: auto;
+    position: relative;
+}
+.container{
+    max-width: var(--container);
+    margin: auto;
 }
 /* general style */
 
@@ -98,7 +111,7 @@
     padding: 10px;
 }
 .hero_content{
-    height: calc(100% - 20px);;
+    height: 100%;
     width: 100%;
     margin: auto;
     padding: 30px 10px;
