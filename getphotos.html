@@ -41,8 +41,8 @@
             position: relative;
             transition: all .9s;
         }
-        .links_galeria a::after{
-            content: "ACESSAR →";
+        .links_galeria .title_link_galeria{
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -57,7 +57,7 @@
             overflow: hidden;
             transition: all .23s;
         }
-        .links_galeria a:hover::after{
+        .links_galeria a:hover .title_link_galeria{
             width: 100%;
         }
         .links_galeria a img{
@@ -88,7 +88,7 @@
 
     <div id="demo">
         <h2>The XMLHttpRequest Object</h2>
-        <button type="button" onclick="loadDoc()">Change Content</button>
+        <button type="button" onclick="loadDocAlbum()">Change Content</button>
     </div>
 
     <img src="https://live.staticflickr.com/65535/52581762046_419f1b612f_w.jpg" alt="">
@@ -111,10 +111,12 @@
 
     <script>
         
-        let api_key_fli = '56058990fbfd9e0e91d86e67cfe633d4';
-        let user_id_fli = '197224598@N03';
+        let api_key_fli = '56058990fbfd9e0e91d86e67cfe633d4'; //api key from flickr
+        let user_id_fli = '197224598@N03'; //user id flickr
 
         let url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+api_key_fli+'&user_id='+user_id_fli+'&per_page=6&format=json&nojsoncallback=1';
+
+        let url_albuns = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key='+api_key_fli+'&user_id='+user_id_fli+'&per_page=6&format=json&nojsoncallback=1'
         
 
         function loadDoc() {
@@ -140,6 +142,45 @@
                 // ============== add to galeria ============================
             }
             xhttp.open("GET", url);
+            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhttp.send();
+        }
+
+        function loadDocAlbum() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                //document.getElementById("demo").innerHTML =
+                let dJson = JSON.parse(this.responseText);
+
+                console.log(dJson)
+
+                let photosets = dJson.photosets.total;
+
+                console.log('albums: '+photosets);
+
+                // ============== add to galeria ============================
+                for(let n = 0; n < dJson.photosets.total; n++){
+                    console.log('loop')
+
+                    let galeria_link = document.createElement('a');
+
+                    galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
+                    galeria_link.setAttribute('target', '_blank');
+
+                    let title_galeria = document.createElement('div');
+                    title_galeria.classList.add('title_link_galeria');
+                    title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
+
+                    galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
+
+                    galeria_link.append(title_galeria);
+
+                    document.querySelector('.links_galeria').append(galeria_link);
+                }
+                //document.querySelector('.links_galeria').
+                // ============== add to galeria ============================
+            }
+            xhttp.open("GET", url_albuns);
             xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhttp.send();
         }

@@ -4,9 +4,6 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-    
-        <base href="https://www.saojosedodivino.pi.leg.br/pagina-inicial/"><!--[if lt IE 7]></base><![endif]-->
     
 
     
@@ -152,6 +149,9 @@ $(document).ready(function() {
     <link media="all" href="/++theme++Cam-Sao-Jose-Divino/css/slick-theme.css" type="text/css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/myStyle.css">
 
     <style>
@@ -182,7 +182,7 @@ $(document).ready(function() {
             content: "";
             width: 70px;
             height: 4px;
-            margin-top: 20px;
+            margin-top: 20px!important;
             background-color: #24420C;
             display: flex;
             margin: auto;
@@ -215,6 +215,8 @@ $(document).ready(function() {
         .tile-content .list-item img{
             border-radius: 0!important;
             -webkit-border-radius: 0!important;
+            width: 100%;
+            margin: 0;
             transition: all .23s;
         }
         .tile-content .list-item img:hover{
@@ -245,7 +247,7 @@ $(document).ready(function() {
 
         /* faixa cta */
         .fixa_cta{
-            padding: 40px 10px;
+            padding: 40px 10px 60px;
             background-color: #0B0B0B;
             color: #ffffff;
             text-align: center;
@@ -254,6 +256,14 @@ $(document).ready(function() {
             background-color: #24420C;
             position: relative;
             margin: 10px auto 40px;
+        }
+        .content_fixa_cta{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            width: 100%;
         }
         .fixa_cta h2{
             color: #fff;
@@ -283,6 +293,8 @@ $(document).ready(function() {
             border-radius: 20px;
             font-size: 18px;
             transition: all .23s;
+            margin: auto;
+            display: block;
         }
         .btn_faixa_cta:hover{
         }
@@ -329,12 +341,12 @@ $(document).ready(function() {
             position: relative;
             transition: all .9s;
         }
-        .links_galeria a::after{
-            content: "ACESSAR →";
+        .links_galeria .title_link_galeria{
+            content: "";
             position: absolute;
             top: 0;
-            left: 0;
-            width: 0%;
+            left: -100%;
+            width: 100%;
             height: 100%;
             background-color: rgba(10, 10, 10, .8);
             display: flex;
@@ -344,17 +356,194 @@ $(document).ready(function() {
             font-size: 1.5em;
             overflow: hidden;
             transition: all .23s;
+            text-align: center;
         }
-        .links_galeria a:hover::after{
-            width: 100%;
+        .links_galeria a:hover .title_link_galeria{
+            left: 0;
+            padding: 5px;
         }
         .links_galeria a img{
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
+        .bottom_galeria{
+            padding: 40px 10px;
+            text-align: center;
+        }
+        .btn_galeria{
+            padding: 10px 30px;
+            background-color: #24420C;
+            color: #ffffff!important;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all .23s;
+        }
+        a.btn_galeria:hover{
+            transform: scale(1.2)!important;
+            color: #ffffff!important;
+        }
         /* galeria de imagens */
+
+
+
+        /* phot */
+        .phot{
+            padding: 60px 10px;
+            background-color: #EFFFCF;
+            position: relative;
+        }
+        .phot::before{
+            content: "";
+            width: 200%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: -200%;
+            background-color: #EFFFCF;
+        }
+        .phot::after{
+            content: "";
+            width: 200%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -200%;
+            background-color: #EFFFCF;
+        }
+        .phot h2 {
+            border: none;
+            width: 100%;
+            text-align: center;
+            font-size: 3em;
+            font-weight: 500;
+            position: relative;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .phot h2::after {
+            content: "";
+            width: 70px;
+            height: 4px;
+            margin-top: 10px!important;
+            background-color: #24420C;
+            display: flex;
+            margin: auto;
+        }
+        .phot_left img{
+            max-width: 100%;
+        }
+        .content_phot{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content_phot header{
+            width: 100%;
+        }
+        .phot_left, .phot_right{
+            flex-basis: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .phot_left{
+            padding: 10px 10px 40px 0;
+        }
+        .bottom_phot{
+            padding: 10px;
+        }
+        .phot_right h4{
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+        .phot_right h3{
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+        .phot_right p{
+            display: block!important;
+            width: 100%;
+            text-align: left;
+            font-size: 1.3em;
+            margin-bottom: 40px!important;
+        }
+        .insti_videos{
+            padding: 40px 0 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 2px solid #e1e1e1;
+        }
+        .uni_insti_video{
+            flex-basis: 50%;
+            box-sizing: border-box;
+        }
+        .uni_insti_video:first-child{
+            padding: 10px 10px 10px 0;
+        }
+        .uni_insti_video:last-child{
+            padding: 10px 0 10px 10px;
+        }
+        .uni_insti_video iframe{
+            width: 100%;
+        }
+        /* phot */
+
+
+
+
+        /* carousel vereador */
+        .carousel_vereador{
+            padding: 80px 10px;
+        }
+        .carousel_vereador .owl-stage-outer{
+            padding: 40px 0px;
+        }
+        .carousel_vereador header h2{
+            border: none;
+            width: 100%;
+            text-align: center;
+            font-size: 3em;
+            font-weight: 500;
+            position: relative;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .carousel_vereador header h2::after {
+            content: "";
+            width: 70px;
+            height: 4px;
+            margin-top: 10px!important;
+            background-color: #24420C;
+            display: flex;
+            margin: auto;
+        }
+        .card_vereador{
+            background-color: #ffffff;
+            border: 1px solid #c1c1c1;
+            border-radius: 10px;
+            margin: 5px;
+            overflow:hidden;
+            transition: all .23s;
+        }
+        .card_vereador img{
+            width: 100%;
+            height: 312px;
+            object-fit: cover;
+        }
+        .informacao_vereador{
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .informacao_vereador h3{
+            font-size: 1.8em;
+            font-weight: 400;
+        }
+        .card_vereador:hover{
+            border: 1px solid #0B0B0B;
+            transform: translateY(-5px);
+        }
+        /* carousel vereador */
+
 
         /* style content homepage */
     </style>
@@ -555,22 +744,6 @@ $(document).ready(function() {
             
                 
 
-                <div data-tile="@@collective.cover.carousel/4da7f783b93947d482a46046a406ed1b" class="tile tile-default" id="4da7f783b93947d482a46046a406ed1b">
-
-  
-
-  <div id="galleria-4da7f783b93947d482a46046a406ed1b" class="galleria slide cover-carousel-tile tile-content">
-    
-      <img src="https://www.saojosedodivino.pi.leg.br/institucional/noticias/ver-carlos-portela-destaca-eleicoes-municipais-materias-dos-vereadores-e-transporte-de-alunos/@@images/1ad8aa4b-247d-441b-8228-f09bf94730a6.jpeg" data-title="&lt;a href='https://www.saojosedodivino.pi.leg.br/institucional/noticias/ver-carlos-portela-destaca-eleicoes-municipais-materias-dos-vereadores-e-transporte-de-alunos'&gt;Ver. Carlos Portela destaca eleições municipais, matérias dos vereadores e transporte de alunos&lt;/a&gt;" data-link="https://www.saojosedodivino.pi.leg.br/institucional/noticias/ver-carlos-portela-destaca-eleicoes-municipais-materias-dos-vereadores-e-transporte-de-alunos" data-description="" height="512" width="768" data-uid="574a5fcce45a4a8394848d71513e0be6">
-    
-    
-      <img src="https://www.saojosedodivino.pi.leg.br/institucional/noticias/dr-daniel-destaca-pautas-sobre-atletas-municipais-medalhistas-e-xxx-festa-do-leite/@@images/93815e0b-c040-4c3c-9dfc-0cf2120ab434.jpeg" data-title="&lt;a href='https://www.saojosedodivino.pi.leg.br/institucional/noticias/dr-daniel-destaca-pautas-sobre-atletas-municipais-medalhistas-e-xxx-festa-do-leite'&gt;Dr. Daniel destaca pautas sobre atletas municipais medalhistas e XXX festa do leite&lt;/a&gt;" data-link="https://www.saojosedodivino.pi.leg.br/institucional/noticias/dr-daniel-destaca-pautas-sobre-atletas-municipais-medalhistas-e-xxx-festa-do-leite" data-description="" height="512" width="768" data-uid="df89d8a3c3194ef8b610c9622ff6e032">
-    
-    
-      <img src="https://www.saojosedodivino.pi.leg.br/institucional/noticias/vereadores-aprovam-contas-de-2020-do-prefeito-assis-carvalho/@@images/bb272a60-d7a7-49e9-a24e-49bee7d5778c.jpeg" data-title="&lt;a href='https://www.saojosedodivino.pi.leg.br/institucional/noticias/vereadores-aprovam-contas-de-2020-do-prefeito-assis-carvalho'&gt;Vereadores aprovam contas de 2020 do Prefeito Assis Carvalho&lt;/a&gt;" data-link="https://www.saojosedodivino.pi.leg.br/institucional/noticias/vereadores-aprovam-contas-de-2020-do-prefeito-assis-carvalho" data-description="" height="512" width="768" data-uid="6c3754c8d67c45e8866d72dd33d7eb07">
-    
-  </div>
-</div>
 
                 <div data-tile="@@collective.cover.richtext/f86aab30945e4155a88365c833ca5fb5" class="tile tile-default" id="f86aab30945e4155a88365c833ca5fb5">
     
@@ -1198,8 +1371,8 @@ $(document).ready(function() {
             
 <!-- ================================ faixa cta =============================== -->
 <div class="fixa_cta">
-    <div class="container">
-        <p>São José do Divino</p>
+    <div class="container content_fixa_cta">
+        <p>Câmara de São José do Divino</p>
         <h1>Agenda de Eventos</h1>
         <div id="content-core"></div>
         <a class="btn_faixa_cta" href="">Agenda Completa</a>
@@ -1216,487 +1389,330 @@ $(document).ready(function() {
     </header>
 
     <div class="links_galeria">
-        <a href="https://pixabay.com/photos/meeting-business-architect-office-2284501/">
-            <img src="https://cdn.pixabay.com/photo/2017/05/04/16/37/meeting-2284501_960_720.jpg" alt="">
-        </a>
-        <a href="https://pixabay.com/photos/meeting-brainstorming-business-594091/">
-            <img src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_960_720.jpg" alt="">
-        </a>
-        <a href="https://pixabay.com/photos/job-office-team-business-internet-5382501/">
-            <img src="https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_960_720.jpg" alt="">
-        </a>
-        <a href="https://pixabay.com/photos/computer-pc-workplace-home-office-1185626/">
-            <img src="https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_960_720.jpg" alt="">
-        </a>
-        <a href="https://pixabay.com/photos/laptops-meeting-businessmen-593296/">
-            <img src="https://cdn.pixabay.com/photo/2015/01/08/18/11/laptops-593296_960_720.jpg" alt="">
-        </a>
-        <a href="https://pixabay.com/photos/man-laptop-businessman-entrepreneur-593372/">
-            <img src="https://cdn.pixabay.com/photo/2015/01/08/18/30/man-593372_960_720.jpg" alt="">
-        </a>
+
+    </div>
+
+    <div class="bottom_galeria">
+        <a class="btn_galeria" href="">Ver Galeria Completa</a>
     </div>
 </div>
+<script>
+        
+    let api_key_fli = '56058990fbfd9e0e91d86e67cfe633d4'; //api key from flickr
+    let user_id_fli = '197224598@N03'; //user id flickr
+
+    let url_albuns = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key='+api_key_fli+'&user_id='+user_id_fli+'&per_page=6&format=json&nojsoncallback=1'
+    
+
+    addEventListener('DOMContentLoaded', () => {
+        const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                //document.getElementById("demo").innerHTML =
+                let dJson = JSON.parse(this.responseText);
+
+                console.log(dJson)
+
+                let photosets = dJson.photosets.total;
+
+                console.log('albums: '+photosets);
+
+                // ============== add to galeria ============================
+                for(let n = 0; n < dJson.photosets.total; n++){
+                    console.log('loop')
+
+                    let galeria_link = document.createElement('a');
+
+                    galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
+                    galeria_link.setAttribute('target', '_blank');
+
+                    let title_galeria = document.createElement('div');
+                    title_galeria.classList.add('title_link_galeria');
+                    title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
+
+                    galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
+
+                    galeria_link.append(title_galeria);
+
+                    document.querySelector('.links_galeria').append(galeria_link);
+                }
+                //document.querySelector('.links_galeria').
+                // ============== add to galeria ============================
+            }
+            xhttp.open("GET", url_albuns);
+            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhttp.send();
+    
+    })
+    
+        
+
+</script>
+
 <!-- ========================== galeria de foto ============================ -->
 
+<!-- ======================= presidente/institucional  ============================ -->
+<div class="phot">
 
-                <div data-tile="@@collective.cover.richtext/b1c890a39147448c94e4b7b1ac09c348" class="tile tile-default" id="b1c890a39147448c94e4b7b1ac09c348">
-    
-        
-        <div class="cover-richtext-tile tile-content">
-        
-            
-                <div class="Tv-tile"><div class="title_agenda"><span class="pulse"></span>Câmara em tempo real</div><div class="div-noticia-run"><div class="div-noticia-run-item"><span class="timestamp">26/10</span> | Em 04/novembro a Câmara julgara <a data-mce-href="transparencia/prestacao-de-contas/2020_gov" href="https://www.saojosedodivino.pi.leg.br/transparencia/prestacao-de-contas/2020_gov" target="_self" title="Baixar matéria">contas 2020 </a>da Prefeitura</div><div class="div-noticia-run-item"><span class="timestamp">30/09</span> | Câmara recebe balancetes do Município ref. à julho/2022</div></div></div>
-            
-        
-        </div>
-    
-</div>
-            
-        
-
-        
-
-        
-
-    
-
-
-
-                
-
-            </div>
-            
-        
-    
-
-
-
-            
-
-        </div>
-    
-
-
-
-
-
-        
-        
-            
-
-
-    
-        <div data-layout-type="row" class="row">
-
-            
-                
-
-
-    
-        
-            
-            
-            <div class="cell width-8 position-0 " data-panel="">
-
-                
-                    
-
-    
-
-        
-            
-                
-
-                <div data-tile="@@collective.cover.embed/a229d309de4940de897921e7cb73868b" class="tile tile-default" id="a229d309de4940de897921e7cb73868b">
-  
-
-  <div class="cover-embed-tile tile-content">
-    
-      
-        <!-- FIXME -->
-        <div class="Tv-tile Responsive_materias">
-
-    <h3 class="title_agenda"><i class="far fa-calendar-alt awesome_bloco_topo_home"></i>Agenda Legislativa</h3>
-    <div class="list_audio">
-        <div class="espaco_agenda"></div> 
-         <div class="agenda_bloco">
-            <div class="time-agenda">
-                <span class="timestamp">09/12/2022 - 19h | Categoria: Sessões</span>
-            </div>
-            <a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/sessao/242" title="Ver evento" target="_blank"><i class="far fa-bookmark awesome_bloco_interno_home"></i>27ª Sessão ordinária</a> <br>
-
+    <div class="container content_phot">
+        <header>
+            <h2>Institucional</h2>
+        </header>
+        <div class="f-50 phot_left">
+            <img src="https://cdn.pixabay.com/photo/2022/06/01/19/48/woman-7236476_960_720.jpg" alt="">
         </div>
 
-       
-
-        <div class="agenda_bloco">
-            <div class="time-agenda">
-                <span class="timestamp">02/12/2022 - 19h | Categoria: Sessões</span>
-            </div>
-            <a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/sessao/241" title="Ver evento" target="_blank"><i class="far fa-bookmark awesome_bloco_interno_home"></i>26ª Sessão ordinária</a> <br>
-
-        </div>
-
-
-
-
-
-
-        <div class="agenda_bloco"></div>
-
-
-
-    </div>
-
-    <div class="Tv-tile-footer">
-        <a href="https://sapl.saojosedodivino.pi.leg.br/sessao/pauta-sessao/pesquisar-pauta" title="Agenda Completa" target="_self">Agenda<i class="fas fa-sign-in-alt awesome_bloco_rodape_home"></i></a>
-    </div>
-
-</div>
-      
-
-      
-
-      
-
-      
-        <div class="visualClear"><!-- --></div>
-      
-    
-  </div>
-</div>
-            
-        
-
-        
-
-        
-
-    
-
-
-
-                
-
-            </div>
-            
-        
-    
-
-
-
-            
-            
-                
-
-
-    
-        
-            
-            
-            <div class="cell width-8 position-8 " data-panel="">
-
-                
-                    
-
-    
-
-        
-            
-                
-
-                <div data-tile="@@collective.cover.embed/cdcf3a1191d2441abdd6325bfa949255" class="tile tile-default" id="cdcf3a1191d2441abdd6325bfa949255">
-  
-
-  <div class="cover-embed-tile tile-content">
-    
-      
-        <!-- FIXME -->
-        <div class="Tv-tile Tv-content Responsive_materias">
-
-    <h3 class="title_materias"><i class="fas fa-book awesome_bloco_topo_home"></i>Matérias em Ordem do Dia</h3>
-
-    <div class="list_audio">
-
-        <div class="agenda_bloco">
-
-            
-
-
-
-            <div class="time-agenda">
-                <span class="id_materias"><a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/media/sapl/public/materialegislativa/2022/836/pl_19-2022.pdf" target="_blank" title="Baixar Matéria"><i class="far fa-file-pdf awesome_bloco_interno_home"></i>Proj. Lei 019/2022</a></span> <br>
-
-
-
-            </div>
-
-            <span class="ementa_materia">Orçamento 2023<br>
-            <span class="autor_materia">
-                <i class="fas fa-user-tie awesome_autor_materia"></i>Autor: Pref. Assis Carvalho
-                <i class="fas fa-check-square awesome_autor_materia"></i>Resultado: Aprovado
-            </span>
-
-        </span></div>
-
-         <div class="agenda_bloco">
-
-
-        <div class="agenda_bloco">
-
-            
-
-
-
-            <div class="time-agenda">
-                <span class="id_materias"><a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/media/sapl/public/materialegislativa/2022/844/projeto_de_lei_n021-2022.pdf" target="_blank" title="Baixar Matéria"><i class="far fa-file-pdf awesome_bloco_interno_home"></i>Proj. Lei 021/2022</a></span> <br>
-
-
-
-            </div>
-
-            <span class="ementa_materia">Atualiza vencimentos servidores <br>
-            <span class="autor_materia">
-                <i class="fas fa-user-tie awesome_autor_materia"></i>Autor: Pref. Assis Carvalho
-                <i class="fas fa-check-square awesome_autor_materia"></i>Resultado: Aprovado
-            </span>
-
-        </span></div>
-
-         <div class="agenda_bloco">
-
-            
-
-
-
-            <div class="time-agenda">
-                <span class="id_materias"><a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/media/sapl/public/materialegislativa/2022/837/pl_020-2022.pdf" target="_blank" title="Baixar Matéria"><i class="far fa-file-pdf awesome_bloco_interno_home"></i>Proj. Lei 020/2022</a></span> <br>
-
-
-
-            </div>
-
-            <span class="ementa_materia">Expande perímetro urbano do Município <br>
-            <span class="autor_materia">
-                <i class="fas fa-user-tie awesome_autor_materia"></i>Autor: Pref. Assis Carvalho
-                <i class="fas fa-check-square awesome_autor_materia"></i>Resultado: Aprovado
-            </span>
-
-        </span></div>
-
-
-
-         <div class="agenda_bloco">
-
-            
-
-
-
-            <div class="time-agenda">
-                <span class="id_materias"><a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/media/sapl/public/materialegislativa/2022/831/pl_018-2022.pdf" target="_blank" title="Baixar Matéria"><i class="far fa-file-pdf awesome_bloco_interno_home"></i>Proj. Lei 018/2022</a></span> <br>
-
-
-
-            </div>
-
-            <span class="ementa_materia">Denominação praça Transval<br>
-            <span class="autor_materia">
-                <i class="fas fa-user-tie awesome_autor_materia"></i>Autor: Pref. Assis Carvalho
-                <i class="fas fa-check-square awesome_autor_materia"></i>Resultado: Aprovado
-            </span>
-
-        </span></div>
-
-         <div class="agenda_bloco">
-
-            
-
-
-
-            <div class="time-agenda">
-                <span class="id_materias"><a class="title-item" href="https://sapl.saojosedodivino.pi.leg.br/media/sapl/public/materialegislativa/2022/830/pl_017-2022.pdf" target="_blank" title="Baixar Matéria"><i class="far fa-file-pdf awesome_bloco_interno_home"></i>Proj. Lei 017/2022</a></span> <br>
-
-
-
-            </div>
-
-            <span class="ementa_materia">Denominação praça Tinguis<br>
-            <span class="autor_materia">
-                <i class="fas fa-user-tie awesome_autor_materia"></i>Autor: Pref. Assis Carvalho
-                <i class="fas fa-check-square awesome_autor_materia"></i>Resultado: Aprovado
-            </span>
-
-        </span></div>
-
-       
-
-       
-    </div>
-</div>
-      
-
-      
-
-      
-
-      
-        <div class="visualClear"><!-- --></div>
-      
-    
-  </div>
-</div></div>
-            
-        
-
-        
-
-        
-
-    
-
-
-
-                
-
-            </div>
-            
-        
-    
-
-
-
-            
-
-        </div>
-    
-
-
-
-
-
-        
-        
-            
-
-
-    
-        <div data-layout-type="row" class="row">
-
-            
-                
-
-
-    
-        
-            
-            
-            <div class="cell width-16 position-0 " data-panel="">
-
-                
-                    
-
-    
-
-        
-            
-                
-
-                <div data-tile="@@collective.cover.richtext/d6f908a9b73f4c0dbbc2fc4a83ff01ce" class="tile tile-default" id="d6f908a9b73f4c0dbbc2fc4a83ff01ce">
-    
-        
-        <div class="cover-richtext-tile tile-content">
-        
-            
-                <div class="title_Tv">
-    <h3><i class="fas fa-video awesome_bloco_topo_home"></i>TV Câmara</h3>
-</div>
-<div class="TV_container">   
-
-
-    <div class="vid_TV_container">
-        <iframe id="vid_frame" src="https://www.youtube.com/embed/zlo-US3oOlY" frameborder="0" allowfullscreen="allowfullscreen" width="560" height="250"></iframe>
-    </div>
-
-    <div class="vid_list_TV_container">
-        <div class="vid-list">
-
-            <div class="vid-item" data-url="https://www.youtube.com/embed/zlo-US3oOlY">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/zlo-US3oOlY/hqdefault.jpg"></div>
-                <div class="desc">Audiência pública 001/2022 - LOA 2023</div>
-            </div>
-
-            <div class="vid-item" data-url="https://www.youtube.com/embed/2QavbQ3MIag">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/2QavbQ3MIag/hqdefault.jpg"></div>
-                <div class="desc">Julgamento Contas de governo 2020 - prefeito Assis Carvalho</div>
-            </div>
-
-             <div class="vid-item" data-url="https://www.youtube.com/embed/4LDULpjAVQ8">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/4LDULpjAVQ8/hqdefault.jpg"></div>
-                <div class="desc">Ver. Portela apresenta Moção de aplauso a atletas medalhistas das...</div>
-            </div>
-
-             <div class="vid-item" data-url="https://www.youtube.com/embed/3tcsaQKEHI8">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/3tcsaQKEHI8/hqdefault.jpg"></div>
-                <div class="desc">Dr. Daniel destaca pautas sobre atletas municipais medalhistas...</div>
-            </div>
-
-             <div class="vid-item" data-url="https://www.youtube.com/embed/TUibgT9OfHE">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/TUibgT9OfHE/hqdefault.jpg"></div>
-                <div class="desc">Sessão ordinária 023/2022</div>
-            </div>
-
-             <div class="vid-item" data-url="https://www.youtube.com/embed/KkaT7WiBPDI">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/KkaT7WiBPDI/hqdefault.jpg"></div>
-                <div class="desc">Sessão ordinária 022/2022</div>
-            </div>
-
-            <div class="vid-item" data-url="https://www.youtube.com/embed/9N8nkYmGWH0">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/9N8nkYmGWH0/hqdefault.jpg"></div>
-                <div class="desc">Sessão ordinária 021/2022</div>
-            </div>
-
-            <div class="vid-item" data-url="https://www.youtube.com/embed/6DEqXVKnKM4">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/6DEqXVKnKM4/hqdefault.jpg"></div>
-                <div class="desc">Sessão ordinária 020/2022</div>
-            </div>
-
-          
-
-            <div class="vid-item" data-url="https://www.youtube.com/embed/aj8aX_DtMj8">
-                <div class="thumb"><img src="https://i.ytimg.com/vi/aj8aX_DtMj8/hqdefault.jpg"></div>
-                <div class="desc">Discussão e votação ao Projeto que trata de autorização ao Executivo..</div>
-            </div>
-
-        
-          
-
+        <div class="f-50 phot_right">
+           <h4>Presidente</h4>
+           <h3>Patrícia Cerqueira</h3>
+
+           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius inventore explicabo eos dicta impedit distinctio tenetur, maxime perferendis ut illo consequuntur neque repellendus libero iusto...</p>
            
-           
-           
+           <div class="bottom_phot">
+                <a class="btn_galeria" href="">Ver Mais</a>
+            </div>
+
         </div>
 
-    </div>
+        <div class="insti_videos">
+            <div class="uni_insti_video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ChQv_onK4n8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
 
-
-
-
-    <div class="arrows">
-        <div class="arrow-left"><i class="fas fa-chevron-left"></i></div>
-        <div class="arrow-right"><i class="fas fa-chevron-right"></i></div>
-    </div>
-
-    <div class="TV_footer">
-
-        <div class="TV_bottom"><a href="https://www.youtube.com/camarasjd/videos" target="_blank" title="Canal no YouTube">MAIS VIDEOS</a></div>
-        <div class="TV_subscribe">
-            <a href="https://www.youtube.com/camarasjd?sub_confirmation=1" target="_blank" title="Inscrição em nosso Canal"><img src="https://www.saojosedodivino.pi.leg.br/arquivos/2020/logo_tv.png" alt="logo_tv.png" title="">INSCREVA-SE</a>
+            <div class="uni_insti_video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EFY_5bEXRE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
 </div>
-            
-        
-        </div>
+<!-- ======================= presidente/institucional  ============================ -->
+
+
+<!-- =============================== vereadores =========================================== -->
+<div class="carousel_vereador">
+
+    <header>
+        <h2>Vereadores</h2>
+    </header>
+
+    <section class="owl-carousel content_carousel_vereador">
+
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+        <!-- ========================= card vereador ========================= -->
+        <article class="card_vereador">
+
+            <!-- Link página do vereador -->
+            <a href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30">
+
+                <!-- Imagem do vereador -->
+                <img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt=""> 
+
+                <div class="informacao_vereador">
+                    
+                    <!-- redes sociais do vereador -->
+                    <div class="rede_social_vereador">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <!-- nome do vereador -->
+                    <h3 class="nome_vereador">José Carlos</h3>
+
+                    <!-- Partido -->
+                    <h4 class="partido_vereador"><small>PL</small></h4>
+                </div>
+            </a>
+        </article>
+
+
+    </section>
+</div>
+<!-- =============================== vereadores =========================================== -->
+
+                <div style="display: none;" data-tile="@@collective.cover.richtext/b1c890a39147448c94e4b7b1ac09c348" class="tile tile-default" id="b1c890a39147448c94e4b7b1ac09c348">
+
     
 </div>
             
@@ -1757,14 +1773,7 @@ $(document).ready(function() {
 
                 <div data-tile="@@collective.cover.richtext/c7764d98ebaf44c38ceae35655e78532" class="tile tile-default" id="c7764d98ebaf44c38ceae35655e78532">
     
-        
-        <div class="cover-richtext-tile tile-content">
-        
-            
-                <div class="Tv-tile"><h3 class="title_materias"><i class="fas fa-user-tie awesome_bloco_topo_home"></i>Vereadores</h3><div class="ver-gal-body"><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/34" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/34"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_samuelle_8a_leg.jpg" alt="[Ver. Samuelle]" data-mce-src="imagens/ver/ver_samuelle_8a_leg.jpg" class="image-inline" title="Ver. Samuelle"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/lunara.samuelle" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/lunara.samuelle"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/lunara.samuelle/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/lunara.samuelle/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>SAMUELLE</p><p>PL</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/7" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/7"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_betania_8a_leg.jpg" alt="[Ver. Betânia Freire]" data-mce-src="imagens/ver/ver_betania_8a_leg.jpg" class="image-inline" title="Ver. Betânia Freire"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/betania.fr" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/betania.fr"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/betania._freire/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/betania._freire/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>BETÂNIA FREIRE</p><p>MDB</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/29" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/29"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_patricia_8a_leg.jpg" alt="[Ver. Patrícia Cerqueira]" data-mce-src="imagens/ver/ver_patricia_8a_leg.jpg" class="image-inline" title="Ver. Patrícia Cerqueira"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/patricia.carvalhocerqueira" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/patricia.carvalhocerqueira"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/patricia_cerqueira01/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/patricia_cerqueira01/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>PATRÍCIA CERQUEIRA</p><p>MDB</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/30"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_portela_8a_leg.jpg" alt="[Ver. Carlos Portela]" data-mce-src="imagens/ver/ver_portela_8a_leg.jpg" class="image-inline" title="VER. Carlos Portela"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/karlosportela" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/karlosportela"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/fcsportela/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/fcsportela/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>CARLOS PORTELA</p><p>PT</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/8" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/8"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_eri_8a_leg.jpg" alt="[Ver. Eri]" data-mce-src="imagens/ver/ver_eri_8a_leg.jpg" class="image-inline" title="Ver. Eri"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/erivaldo.machado.733" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/erivaldo.machado.733"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/erivaldo.machado.733/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/erivaldo.machado.733/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>ERI</p><p>MDB</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/32" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/32"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_drdaniel_8a_leg.jpg" alt="[Ver. Dr. Daniel]" data-mce-src="imagens/ver/ver_drdaniel_8a_leg.jpg" class="image-inline" title="Ver. Dr. Daniel"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/dr.daniellima" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/dr.daniellima"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/dr_daniellima/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/dr_daniellima/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>DR. DANIEL</p><p>PSD</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/36" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/36"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_raquel_8a_leg.jpg" alt="[Ver. Raquel Sousa]" data-mce-src="imagens/ver/ver_raquel_8a_leg.jpg" class="image-inline" title="Ver. Raquel Sousa"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/raquel.sousa.3762" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/raquel.sousa.3762"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/raquelsousavereadora/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/raquelsousavereadora/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>RAQUEL SOUSA</p><p>PP</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/9" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/9"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_neusa_8a_leg.jpg" alt="[Ver. Neusa]" data-mce-src="imagens/ver/ver_neusa_8a_leg.jpg" class="image-inline" title="Ver. Neusa"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/profile.php?id=100079253436703" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/profile.php?id=100079253436703"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/neusa_fontenele/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/neusa_fontenele/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>NEUSA</p><p>PP</p></div><div class="vereador"><div class="img-ver"><a class="external-link" href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/35" target="_blank" title="" data-mce-href="https://sapl.saojosedodivino.pi.leg.br/parlamentar/35"><img src="https://www.saojosedodivino.pi.leg.br/imagens/ver/ver_pagaio_8a_leg.jpg" alt="[Ver. Pagaio]" data-mce-src="imagens/ver/ver_pagaio_8a_leg.jpg" class="image-inline" title="Ver. Pagaio"></a><ul class="gal_vereador_social-links"><li><a href="https://www.facebook.com/sebastiao.pagaio.399" target="_blank" title="Facebook" data-mce-href="https://www.facebook.com/sebastiao.pagaio.399"><i class="gal_vereador_social-links_awesome fab fa-facebook-square"></i> </a></li><li><a href="https://www.instagram.com/pagaiosebastiaoo/" target="_blank" title="Instagram" data-mce-href="https://www.instagram.com/pagaiosebastiaoo/"><i class="gal_vereador_social-links_awesome fab fa-instagram"></i></a></li></ul></div><p>PAGAIO</p><p>PP</p></div></div></div>
-            
-        
-        </div>
+  
     
 </div>
             
@@ -1913,11 +1922,38 @@ $(document).ready(function() {
 </div>
 </div>
 
+
     <p class="visualClear"></p>
 
   
         </div>
 
+        <script src="./javascript/jquery-3.6.0.min.js"></script>
+        <script src="./javascript/owl.carousel.min.js"></script>
+
+        <script>
+                $(document).ready(function(){
+                    $(".owl-carousel").owlCarousel({
+                        loop:true,
+                        margin:10,
+                        nav:true,
+                        autoplay:true,
+                        autoplayTimeout:4000,
+                        autoplayHoverPause:true,
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:3
+                            },
+                            1000:{
+                                items:4
+                            }
+                        }
+                    });
+                });
+        </script>
         <!-- /Footer-->
         
         <style>
@@ -2034,6 +2070,7 @@ $(document).ready(function() {
     
 
     <script>
+    
         function setCookie(cname, cvalue, exdays) {
             const d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -2071,5 +2108,6 @@ $(document).ready(function() {
             
         }
     </script>
-    </div></body>
-    </html>
+    </div>
+</body>
+</html>
