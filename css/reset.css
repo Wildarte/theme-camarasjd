@@ -31,3 +31,12 @@
 #portal-searchbox #searchGadget{
     border-bottom: 1px solid #ffffff!important;
 }
+#portal-personaltools{
+    display: none;
+}
+
+@media(max-width: 1080px){
+    #content{
+        margin: 0;
+    }
+}

@@ -249,6 +249,51 @@
 
         let id_videos = ['HgzGwKwLmgM','4-43lLKaqBQ','5fdnQT_8_Vs','eCyMh-mZ1B0','kJQP7kiw5Fk']
 
+        let api_channel = 'AIzaSyBnu_n9xId8K-ikHXZT3pZG81lTkJENChs';
+        
+        let id_channel = 'UCEdPWb-7bUx3QeJvKlCE5BQ';
+
+        let url_channel = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId='+id_channel+'&key='+api_channel+'&maxResults=7&type=video&order=date'
+
+    addEventListener('DOMContentLoaded', () => {
+        const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                //document.getElementById("demo").innerHTML =
+                let youtubeJson = JSON.parse(this.responseText);
+
+                console.log(youtubeJson)
+
+                // ============== add to galeria ============================
+
+                /*
+                for(let n = 0; n < dJson.photosets.total; n++){
+                    console.log('loop')
+
+                    let galeria_link = document.createElement('a');
+
+                    galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
+                    galeria_link.setAttribute('target', '_blank');
+
+                    let title_galeria = document.createElement('div');
+                    title_galeria.classList.add('title_link_galeria');
+                    title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
+
+                    galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
+
+                    galeria_link.append(title_galeria);
+
+                    document.querySelector('.links_galeria').append(galeria_link);
+                }
+                */
+                //document.querySelector('.links_galeria').
+                // ============== add to galeria ============================
+            }
+            xhttp.open("GET", url_channel);
+            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhttp.send();
+    
+    })
+
         for(let n = 0; n < 6; n++){
 
             let article = document.createElement('article');

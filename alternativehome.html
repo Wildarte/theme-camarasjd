@@ -153,6 +153,7 @@ $(document).ready(function() {
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/myStyle.css">
 
     <style>
@@ -166,6 +167,21 @@ $(document).ready(function() {
         }
         #main{
             max-width: 1200px;
+        }
+        .title-default{
+            width: 100%;
+            text-align: left!important;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .title-default::after{
+            content: "";
+            width: 100%!important;
+            height: 4px;
+            margin-top: 20px!important;
+            background-image: linear-gradient(to right, #24420C, rgba(255,255,255, .99));
+            display: flex;
+            margin: auto;
         }
         .container{
             max-width: 1200px;
@@ -276,11 +292,11 @@ $(document).ready(function() {
         }
         .fixa_cta::before{
             content: "";
-            width: 400%;
+            width: 800%;
             height: 100%;
             position: absolute;
             top: 0;
-            right: -200%;
+            right: -300%;
             background-color: #24420C;
             z-index: -1;
         }
@@ -304,8 +320,10 @@ $(document).ready(function() {
             transition: all .23s;
             margin: auto;
             display: block;
+            transition: all .23s;
         }
-        .btn_faixa_cta:hover{
+        #content .btn_faixa_cta:hover{
+            color: #343434!important;
         }
         .fixa_cta h1{
             color: #ffffff;
@@ -388,7 +406,11 @@ $(document).ready(function() {
             color: #ffffff!important;
             text-decoration: none;
             border-radius: 20px;
+            font-size: 1.5em;
             transition: all .23s;
+        }
+        #content a.btn_galeria:hover{
+            color: #ffffff!important;
         }
         a.btn_galeria:hover{
             transform: scale(1.2)!important;
@@ -406,20 +428,20 @@ $(document).ready(function() {
         }
         .phot::before{
             content: "";
-            width: 200%;
+            width: 400%;
             height: 100%;
             position: absolute;
             top: 0;
-            right: -200%;
+            right: -400%;
             background-color: #EFFFCF;
         }
         .phot::after{
             content: "";
-            width: 200%;
+            width: 400%;
             height: 100%;
             position: absolute;
             top: 0;
-            left: -200%;
+            left: -400%;
             background-color: #EFFFCF;
         }
         .phot h2 {
@@ -641,20 +663,20 @@ $(document).ready(function() {
         }
         .container_videos::before{
             content: "";
-            width: 400%;
+            width: 800%;
             height: 100%;
             position: absolute;
             top: 0;
-            right: -200%;
+            right: -300%;
             background-color: #343434;
             z-index: -1;
         }
         .container_videos::after{
             content: "";
-            width: 400%;
+            width: 800%;
             height: 50%;
             position: absolute;
-            left: -200%;
+            left: -300%;
             bottom: 0;
             background-color: #232323;
         }
@@ -795,9 +817,11 @@ $(document).ready(function() {
             align-content: center;
             box-shadow: 2px 2px 8px rgba( 10, 10, 10, .6);
             transition: all .23s;
+            color: #ffffff!important;
         }
-        .btn_videos:hover{
+        #content a.btn_videos:hover{
             transform: scale(1.1);
+            color: #ffffff !important;
         }
         .btn_videos i{
             margin-left: 10px;
@@ -806,7 +830,12 @@ $(document).ready(function() {
             .container_videos iframe{
                 height: 400px;
             }
-           
+            .phot::before, .fixa_cta::before, .container_videos::before{
+                display: none;
+            }
+            .container_videos::after{
+                width: 100%;
+            }
         }
 
         @media(max-width: 768px){
@@ -828,6 +857,10 @@ $(document).ready(function() {
             }
             .uni_insti_video iframe{
                 height: 200px;
+            }
+
+            .barra_header{
+                display: none;
             }
         }
 
@@ -854,6 +887,9 @@ $(document).ready(function() {
             }
             .links_galeria a{
                 height: 200px;
+            }
+            .title-default{
+                font-size: 1.8em!important;
             }
            
         }
@@ -1698,7 +1734,7 @@ $(document).ready(function() {
 <!-- ========================== galeria de foto ============================ -->
 <div class="galeria_dev">
     <header>
-        <h2>Galeria de imagens</h2>
+        <h2 class="title-default">Galeria de imagens</h2>
     </header>
 
     <div class="links_galeria">
@@ -1711,8 +1747,8 @@ $(document).ready(function() {
 </div>
 <script>
         
-    let api_key_fli = '56058990fbfd9e0e91d86e67cfe633d4'; //api key from flickr
-    let user_id_fli = '197224598@N03'; //user id flickr
+        let api_key_fli = '2cca0e2716e10744dd9f52fd11083941'; //api key from flickr
+        let user_id_fli = '146020606@N06'; //user id flickr
 
     let url_albuns = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key='+api_key_fli+'&user_id='+user_id_fli+'&per_page=6&format=json&nojsoncallback=1'
     
@@ -1763,12 +1799,13 @@ $(document).ready(function() {
 
 <!-- ========================== galeria de foto ============================ -->
 
+
 <!-- ======================= presidente/institucional  ============================ -->
 <div class="phot">
 
     <div class="container content_phot">
         <header>
-            <h2>Institucional</h2>
+            <h2 class="title-default">Institucional</h2>
         </header>
         <div class="f-50 phot_left">
             <img src="https://cdn.pixabay.com/photo/2022/06/01/19/48/woman-7236476_960_720.jpg" alt="">
@@ -1805,7 +1842,7 @@ $(document).ready(function() {
 <div class="carousel_vereador">
 
     <header>
-        <h2>Vereadores</h2>
+        <h2 class="title-default">Vereadores</h2>
     </header>
 
     <section class="owl-carousel content_carousel_vereador">
@@ -2029,7 +2066,7 @@ $(document).ready(function() {
 <!-- ======================================== video youtube ===================================== -->
 <div class="container_videos">
     <header>
-        <h2>
+        <h2 class="title-default">
             <span><i class="bi bi-youtube"></i></span> TV Câmara
         </h2>
     </header>
@@ -2047,6 +2084,57 @@ $(document).ready(function() {
     </div>
     
 </div>
+
+<script>
+
+    let api_channel = 'AIzaSyBMED-90b7blJkFBmLfr4ZyisfFX_2RjgY';
+    let id_channel = 'UCKpaptrhrXTKaDQvlj0Rgig';
+
+    let url_channel = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId='+id_channel+'&key='+api_channel+'&maxResults=3&type=video&order=date'
+
+    addEventListener('DOMContentLoaded', () => {
+        const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                //document.getElementById("demo").innerHTML =
+                let dJson = JSON.parse(this.responseText);
+
+                console.log(dJson)
+
+                let photosets = dJson.photosets.total;
+
+                console.log('channel: '+photosets);
+
+                // ============== add to galeria ============================
+
+                /*
+                for(let n = 0; n < dJson.photosets.total; n++){
+                    console.log('loop')
+
+                    let galeria_link = document.createElement('a');
+
+                    galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
+                    galeria_link.setAttribute('target', '_blank');
+
+                    let title_galeria = document.createElement('div');
+                    title_galeria.classList.add('title_link_galeria');
+                    title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
+
+                    galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
+
+                    galeria_link.append(title_galeria);
+
+                    document.querySelector('.links_galeria').append(galeria_link);
+                }
+                */
+                //document.querySelector('.links_galeria').
+                // ============== add to galeria ============================
+            }
+            xhttp.open("GET", url_channel);
+            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhttp.send();
+    
+    })
+</script>
 <!-- ========================================== videos youtube ================================== -->
 
                 <div style="display: none;" data-tile="@@collective.cover.richtext/b1c890a39147448c94e4b7b1ac09c348" class="tile tile-default" id="b1c890a39147448c94e4b7b1ac09c348">
@@ -2185,86 +2273,7 @@ $(document).ready(function() {
         </div>
 
         <!-- Footer -->
-        <div id="footer" role="contentinfo">
-            <a name="afooter" id="afooter"></a>
-            <div class="clear"></div>
-            
-
-    
-
-    <div class="extra-footer-one"><a accesskey="3" href="https://www.saojosedodivino.pi.leg.br/sitemap" title="Mapa do Site">Mapa do Site <i class="fas fa-sitemap awesome_extra-footer-one"></i></a> <span class="separado_extra-footer-one"></span> <a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Acesso à Informação">Acesso à informação <i class="fas fa-info-circle awesome_extra-footer-one"></i></a></div>
-<table class="invisible">
-<tbody>
-<tr><th style="text-align:left; ">Institucional</th><th style="text-align:left; ">Legislação</th><th style="text-align:left; ">Serviços</th><th style="text-align:left; ">Sites</th><th style="text-align:left; ">Redes Sociais</th></tr>
-<tr>
-<td>
-<ul>
-<li><a title="" href="https://www.saojosedodivino.pi.leg.br/institucional/funcao-e-competencia" class="internal-link" target="_self">Função e Competência</a></li>
-<li><a href="https://www.saojosedodivino.pi.leg.br/processo-legislativo/mesa-diretora">Mesa Diretora</a></li>
-<li><a href="https://www.saojosedodivino.pi.leg.br/processo-legislativo/vereadores">Vereadores</a></li>
-<li><a href="https://www.saojosedodivino.pi.leg.br/processo-legislativo/comissoes">Comissões</a></li>
-</ul>
-</td>
-<td>
-<ul>
-<li><a href="https://www.saojosedodivino.pi.leg.br/institucional/regimento" class="internal-link" title="">Regimento interno</a></li>
-<li><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/lei-organica" class="internal-link" title="">Lei orgânica</a></li>
-<li class="last-item"><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/legislacao-municipal">Legislação Municipal</a></li>
-<li><a href="https://www.saojosedodivino.pi.leg.br/processo-legislativo/materias-legislativas" title="">Matérias legislativas</a></li>
-</ul>
-</td>
-<td>
-<ul>
-<li><a href="https://www.saojosedodivino.pi.leg.br/transparencia">Transparência</a></li>
-<li><a href="https://sapl.saojosedodivino.pi.leg.br">Processo Legislativo</a></li>
-<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria">Ouvidoria</a></li>
-<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" title="">Acesso à Informação</a></li>
-<li class="last-item"><a href="https://www.saojosedodivino.pi.leg.br/transparencia/diario-oficial">Diário oficial</a></li>
-</ul>
-</td>
-<td>
-<ul>
-<li><a href="https://edemocracia.saojosedodivino.pi.leg.br/" target="_blank">E-Democracia</a></li>
-<li><a href="https://correio.interlegis.leg.br/" target="_blank">E-Mail institucional</a></li>
-<li><a class="external-link" href="https://servidoronline.siafc.com.br/camarasaojosedodivino" target="_blank" title="">ContraCheque</a></li>
-<li><a href="https://sapl.saojosedodivino.pi.leg.br/" target="_blank">SAPL</a></li>
-</ul>
-</td>
-<td>
-<ul>
-<li><a class="external-link" href="https://www.youtube.com/camarasjd" target="_blank" title="">Youtube</a></li>
-<li><a href="https://www.facebook.com/camarasjd" target="_blank">Facebook</a></li>
-<li><a href="https://twitter.com/camarasjd/" target="_blank">Twitter</a></li>
-<li><a href="https://www.instagram.com/camarasjd" target="_blank">Instagram</a></li>
-<li><a href="https://www.flickr.com/photos/camarasjd" target="_blank">Flickr</a></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="footer-logos">
-<div class="container">
-<p>Av. Manoel Divino, 75 - CEP 64245-000 <br> Tel.: (86) 3346-1254  <a href="mailto:camara@saojosedodivino.pi.leg.br">- E-mail: camara@saojosedodivino.pi.leg.br</a> <br> <span class="footer_expediente">Expediente administrativo: 8h às 13h (segunda à sexta) <br> Sessões ordinárias: 19h (três primeiras sextas-feiras) </span></p>
-</div>
-</div>
-<div class="extra-footer">
-<div class="container">
-<div class="redes_sociais_footer_invisible">
-<p>. <a href="https://www.youtube.com/camarasjd" target="_blank" title="Youtube"><i class="fab fa-youtube-square"></i></a> <a href="https://www.facebook.com/camarasjd" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a> <a href="https://twitter.com/camarasjd/" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></a> <a href="https://www.instagram.com/camarasjd" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a> <a href="https://www.flickr.com/photos/camarasjd" target="_blank" title="Flickr"><i class="fab fa-flickr"></i></a></p>
-</div>
-<span class="separador_extra footer-separador"></span>
-<p><a href="#" target="_self" title="Sobre o portal">Sobre</a></p>
-<p>Site desenvolvido pelo <a href="http://www.interlegis.leg.br/"><i>Interlegis</i></a></p>
-<span class="footer-separador"></span>
-<p><a title="Acesso interno" href="https://www.saojosedodivino.pi.leg.br/login" class="actionMenu" target="_self">ACESSO<i class="fas fa-sign-in-alt awesome_bloco_rodape_home"></i></a></p>
-</div>
-</div>
-
-
-    <p class="visualClear"></p>
-
-  
-        </div>
+ 
 
         <script src="./javascript/jquery-3.6.0.min.js"></script>
         <script src="./javascript/owl.carousel.min.js"></script>
