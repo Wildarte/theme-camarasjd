@@ -226,10 +226,12 @@
             </header>
             <div class="content_videos">
                 <div class="focus_video">
-                    <iframe id="iframe_video" width="" height="" src="https://www.youtube.com/embed/5Cjf6hvANrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="iframe_video" width="" height="" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <div class="owl-carousel thumbs_video"></div>
+                <div class="owl-carousel thumbs_video">
+                    
+                </div>
                 
                 <div class="bottom_videos">
                     <a class="btn_videos" href="">Mais Vídeos <i class="bi bi-play-btn"></i></a>
@@ -247,7 +249,7 @@
 
     <script>
 
-        let id_videos = ['HgzGwKwLmgM','4-43lLKaqBQ','5fdnQT_8_Vs','eCyMh-mZ1B0','kJQP7kiw5Fk']
+        //let id_videos = ['HgzGwKwLmgM','4-43lLKaqBQ','5fdnQT_8_Vs','eCyMh-mZ1B0','kJQP7kiw5Fk']
 
         let api_channel = 'AIzaSyBnu_n9xId8K-ikHXZT3pZG81lTkJENChs';
         
@@ -255,15 +257,33 @@
 
         let url_channel = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId='+id_channel+'&key='+api_channel+'&maxResults=7&type=video&order=date'
 
-    addEventListener('DOMContentLoaded', () => {
         const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 //document.getElementById("demo").innerHTML =
                 let youtubeJson = JSON.parse(this.responseText);
 
-                console.log(youtubeJson)
+                console.log(youtubeJson);
+
+                let count = youtubeJson.items;
+
+                console.log('count: '+count.lenght)
+
+                //console.log('id do vídeo um')
+
+                document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${youtubeJson.items[0].id.videoId}`);
 
                 // ============== add to galeria ============================
+
+                for(let n = 1; n < youtubeJson.pageInfo.resultsPerPage; n++){
+
+                    let article = document.createElement('article');
+                    article.classList.add('play_thumb')
+                    article.innerHTML = `<img src="${youtubeJson.items[n].snippet.thumbnails.medium.url}" alt=""><i class="bi bi-play-fill"></i>`;
+                    article.setAttribute('data-id', ''+youtubeJson.items[n].id.videoId+'');
+
+                    document.querySelector('.thumbs_video').append(article)
+
+                }
 
                 /*
                 for(let n = 0; n < dJson.photosets.total; n++){
@@ -292,8 +312,9 @@
             xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhttp.send();
     
-    })
+    
 
+        /*
         for(let n = 0; n < 6; n++){
 
             let article = document.createElement('article');
@@ -304,6 +325,7 @@
             document.querySelector('.thumbs_video').append(article)
 
         }
+        */
         $(document).ready(function(){
             setTimeout(function(){
                 $(".thumbs_video").owlCarousel({
@@ -325,23 +347,29 @@
                         }
                     }
                 });
-            }, 100)
+            }, 3000)
         });
 
+        setTimeout(function(){
 
-        const articles_play = document.querySelectorAll('.play_thumb');
+            const articles_play = document.querySelectorAll('.play_thumb');
+            articles_play.forEach((item) => {
 
-        articles_play.forEach((item) => {
+                item.addEventListener('click', () => {
 
-            item.addEventListener('click', () => {
+                    document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${item.getAttribute('data-id')}`);
 
-                document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${item.getAttribute('data-id')}`);
+                })
 
-            })
+            });
+            console.log('plays: '+articles_play.length);
+            
+        }, 1000)
 
-        });
+        /*
+        
+        */
 
-        console.log(articles_play);
     </script>
 </body>
 </html>

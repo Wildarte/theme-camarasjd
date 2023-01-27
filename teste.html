@@ -165,6 +165,9 @@ $(document).ready(function() {
         body{
             overflow-x: hidden;
         }
+        #header{
+            height: 100vh;
+        }
         #main{
             max-width: 1200px;
         }
@@ -464,7 +467,7 @@ $(document).ready(function() {
             margin: auto;
         }
         .phot_left img{
-            max-width: 100%;
+            max-width: 80%;
         }
         .content_phot{
             display: flex;
@@ -738,7 +741,6 @@ $(document).ready(function() {
             display: flex;
             align-items: center;
             margin: auto;
-            margin-top: -2px;
         }
         .container_videos .owl-nav button.owl-next{
             right: -20px;
@@ -899,44 +901,67 @@ $(document).ready(function() {
     
 </head>
 
-<body dir="ltr" class="template-view portaltype-collective-cover-content site-portal section-pagina-inicial userrole-anonymous"><div class="barra_header_topo">
-    		<div class="barra_header">
-				<div class="barra_header_left">
+<body dir="ltr" class="template-view portaltype-collective-cover-content site-portal section-pagina-inicial userrole-anonymous">
+    
+    <div class="barra_header_topo">
+    	<div class="barra_header">
+			<div class="barra_header_left">
 
-					<ul id="accessibility">
-						<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">E-SIC</a></li>
-						
-						 <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">OUVIDORIA</a></li>
+				<ul id="accessibility">
+					<li><a href="https://www.saojosedodivino.pi.leg.br/sitemap" target="_blank" title="Mapa do Site">Sitemap</a></li>
+					
+					 <li><a href="https://saojosedodivino.pi.leg.br/accessibility-info" target="_blank" title="Acessibilidade">Acessibilidade</a></li>
 
-						 <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
-						
-						<li><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/legislacao-municipal" target="_self" title="Legislação municipal">LEGISLAÇÃO</a>
-						</li>
+                     <li id="siteaction-contraste"><a href="#" accesskey="" title="Ligar ou desligar o contraste"><i class="fas fa-adjust portal-siteactions-awesome"></i></a></li>
 
-						<li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">CARTA DE SERVIÇOS</a></li>
+                     <li id="siteaction-fontlarge"><a href="javascript:setBaseFontSize('smallText',1);" title="Aumentar Fonte">A+</a></li>
 
-						<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
-					</ul>
-				</div>
+                     <li id="siteaction-fontnormal" class="last-item"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
 
-				<div class="barra_header_right">
+                     <li id="siteaction-vlibras"><a href="http://www.vlibras.gov.br/" accesskey="" title="Acesso ao conteúdo usando o VLibras"><i class="fas fa-sign-language portal-siteactions-awesome"></i></a></li>
 
-					<ul class="icons-acessibilidade-right">
-						<li id="siteaction-sitemap"><a href="https://saojosedodivino.pi.leg.br/accessibility-info" accesskey="" title="Acessibilidade">ACESSIBILIDADE</a></li>
-
-
-						<li id="siteaction-vlibras"><a href="http://www.vlibras.gov.br/" accesskey="" title="Acesso ao conteúdo usando o VLibras"><i class="fas fa-sign-language portal-siteactions-awesome"></i></a></li>
-
-						<li id="siteaction-contraste"><a href="#" accesskey="" title="Ligar ou desligar o contraste"><i class="fas fa-adjust portal-siteactions-awesome"></i></a></li>
-
-						<li id="siteaction-fontlarge"><a href="javascript:setBaseFontSize('smallText',1);" title="Aumentar Fonte">A+</a></li>
-
-						<li id="siteaction-fontnormal"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
-					</ul>
-				</div>
-
+					 <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
+					
+					<li><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/legislacao-municipal" target="_self" title="Legislação municipal">LEGISLAÇÃO</a>
+					</li>
+					
+				</ul>
 			</div>
-		</div><ul class="actionMenu deactivated" id="portal-personaltools">
+
+			<div class="barra_header_right">
+
+                <div class="btn_search open_search">
+                    <i class="bi bi-search"></i>
+                </div>                    
+
+				<ul class="icons-acessibilidade-right">
+					<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
+
+                    <li><a href="https://www.saojosedodivino.pi.leg.br/contact-info" target="_self" title="Contato">CONTATO</a>
+					</li>
+                    
+				</ul>
+			</div>
+
+		</div>
+        <div class="hero_top">
+            <a id="portal-logo" title="Câmara Municipal" accesskey="1" href="https://www.saojosedodivino.pi.leg.br">
+                <img src="https://www.saojosedodivino.pi.leg.br/logo.png" alt="Câmara Municipal" title="Câmara Municipal" height="80" width="70">
+            
+            
+            <div id="titleHeader">
+                <div id="siteTitle">Câmara Municipal</div>
+                <div id="siteDescription">São José do Divino</div>
+            </div>
+            
+            </a>
+
+                <div id="sobre" class="menu menu_dub">
+                    <ul><li id="portaltab-index_html" class="selected"><a href="http://localhost:8080/Plone" title="">Página Inicial</a></li><li id="portaltab-news" class="plain"><a href="http://localhost:8080/Plone/news" title="Notícias do site">Notícias</a></li><li id="portaltab-events" class="plain"><a href="http://localhost:8080/Plone/events" title="Eventos deste site">Eventos</a></li><li id="portaltab-Members" class="plain"><a href="http://localhost:8080/Plone/Members" title="Pastas pessoais de usuários deste site">Usuários</a></li></ul>
+                </div>
+            </div>
+	</div>
+        <ul class="actionMenu deactivated" id="portal-personaltools">
   <li id="anon-personalbar">
     
         <a href="https://www.saojosedodivino.pi.leg.br/login" id="personaltools-login">Acessar</a>
@@ -951,63 +976,53 @@ $(document).ready(function() {
 
         <div id="header" role="banner" style="">
         
-                
-            <div>
-            
-             
-           
-        <a id="portal-logo" title="Câmara Municipal" accesskey="1" href="https://www.saojosedodivino.pi.leg.br">
-    <img src="https://www.saojosedodivino.pi.leg.br/logo.png" alt="Câmara Municipal" title="Câmara Municipal" height="80" width="70">
+            <div class="hero_content">
+                <div class="">
+                   home
+                </div>
+
+                <div class="hero_center">
+                    <h1>CÂMARA MUNICIPAL DE SÃO JOSÉ DO DIVINO</h1>
+                </div>
+
+                <div class="over_redes_sociais">
+                    <!--redes sociais-->
+                    <div class="redes_sociais_header">
+                        <a href="https://www.youtube.com/camarasjd" target="_blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
+                        <a href="https://www.facebook.com/camarasjd" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/camarasjd/" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/camarasjd" target="_blank" title="Instagran"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.flickr.com/photos/camarasjd" target="_blank" title="Flickr"><i class="fab fa-flickr"></i></a>
+                        <a href="http://www.saojosedodivino.pi.leg.br/rss-info" target="_blank" title="Assine os canais RSS"><i class="fas fa-rss-square"></i></a>
+                        <!-- <a href="https://wa.me/message/5FOIK3SBWXNZG1" target="_blank" title="Converse pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>-->
+                    </div>   
+                </div>
 
 
-<div id="titleHeader">
-    <div id="siteTitle">Câmara Municipal</div>
-    <div id="siteDescription">São José do Divino</div>
-</div>
+                <div class="header_bottom">
+                    <ul class="list_menu_bottom">
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">
+                            <img src="img/portal-transparencia.png" alt="">
+                        </a></li>
+                        
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">
+                            <img src="img/carta-serv.png" alt="">
+                        </a></li>
 
-</a>
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">
+                            <img src="img/ouvidoria.png" alt="">
+                        </a></li>
 
-        <div id="portal-searchbox">
+                        <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">
+                            <img src="img/e-sic.png" alt="">
+                        </a></li>
 
-    <form id="searchGadget_form" action="https://www.saojosedodivino.pi.leg.br/@@search">
-
-        <div class="LSBox">
-        <label class="hiddenStructure" for="searchGadget">Busca</label>
-
-        <input name="SearchableText" type="text" size="18" title="Buscar no Site" placeholder="Buscar no Site" accesskey="4" class="searchField" id="searchGadget">
-
-        <input class="searchButton" type="submit" value="Buscar">
-
-        
-
-        <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
-        </div>
-    </form>
-
-    <div id="portal-advanced-search" class="hiddenStructure">
-        <a href="https://www.saojosedodivino.pi.leg.br/@@search" accesskey="5">Busca Avançada…</a>
-    </div>
-
-</div>
-            
-            <!--redes sociais-->
-         <div class="redes_sociais_header">
-                <a href="https://www.youtube.com/camarasjd" target="_blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
-                <a href="https://www.facebook.com/camarasjd" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://twitter.com/camarasjd/" target="_blank" title="Twitter"><i class="fab fa-twitter-square"></i></a>
-                <a href="https://www.instagram.com/camarasjd" target="_blank" title="Instagran"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.flickr.com/photos/camarasjd" target="_blank" title="Flickr"><i class="fab fa-flickr"></i></a>
-                <a href="http://www.saojosedodivino.pi.leg.br/rss-info" target="_blank" title="Assine os canais RSS"><i class="fas fa-rss-square"></i></a>
-               <!-- <a href="https://wa.me/message/5FOIK3SBWXNZG1" target="_blank" title="Converse pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>-->
-
-          
-        </div> 
-            
-        </div>
-        
-        <div id="sobre">
-            <ul><li id="portaltab-index_html" class="selected"><a href="https://www.saojosedodivino.pi.leg.br" class="plain" title="">Página Inicial</a></li><li id="portaltab-fale-conosco" class="plain"><a href="https://saojosedodivino.pi.leg.br/contact-info" class="plain" title="Entre em contato Conosco">Fale Conosco</a></li><li id="portaltab-sapl" class="plain"><a href="https://sapl.saojosedodivino.pi.leg.br/" class="plain" title="Sistema apoio ao processo legislativo">SAPL</a></li></ul>
-        </div>
+                        <li id="portaltab-sapl" class="plain last-item"><a href="https://sapl.saojosedodivino.pi.leg.br/" title="Sistema apoio ao processo legislativo">
+                            <img src="img/sapl.png" alt="">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
         
     </div>
     
@@ -1022,11 +1037,7 @@ $(document).ready(function() {
 
                 <div id="viewlet-above-content"><div id="portal-breadcrumbs">
 
-    <span id="breadcrumbs-you-are-here">Você está aqui:</span>
-    <span id="breadcrumbs-home">
-        <a href="https://www.saojosedodivino.pi.leg.br">Página Inicial</a>
-        
-    </span>
+  
 
 </div>
 
@@ -1037,7 +1048,6 @@ $(document).ready(function() {
                 <!-- Column 1 -->
                 <div id="navigation">
                     <a name="anavigation" id="anavigation"></a>
-                    <span class="menuTrigger">Menu</span>
                     </div>
 
                     <!-- Conteudo -->
@@ -1808,7 +1818,7 @@ $(document).ready(function() {
             <h2 class="title-default">Institucional</h2>
         </header>
         <div class="f-50 phot_left">
-            <img src="https://cdn.pixabay.com/photo/2022/06/01/19/48/woman-7236476_960_720.jpg" alt="">
+            <img src="img/pres.jpeg" alt="">
         </div>
 
         <div class="f-50 phot_right">
@@ -2072,7 +2082,10 @@ $(document).ready(function() {
     </header>
     <div class="content_videos">
         <div class="focus_video">
-            <iframe id="iframe_video" width="" height="" src="https://www.youtube.com/embed/5Cjf6hvANrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <iframe id="iframe_video" width="" height="" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                
+            </iframe>
         </div>
 
         <div class="owl-carousel thumbs_video"></div>
@@ -2087,106 +2100,127 @@ $(document).ready(function() {
 
 <script>
 
-    let api_channel = 'AIzaSyBnu_n9xId8K-ikHXZT3pZG81lTkJENChs';
+    let id_videos = ['HgzGwKwLmgM','4-43lLKaqBQ','5fdnQT_8_Vs','eCyMh-mZ1B0','kJQP7kiw5Fk']
 
+    let api_channel = 'AIzaSyBMED-90b7blJkFBmLfr4ZyisfFX_2RjgY';
+    
     let id_channel = 'UCEdPWb-7bUx3QeJvKlCE5BQ';
 
-    let url_channel = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId='+id_channel+'&key='+api_channel+'&maxResults=6&type=video&order=date'
+    let url_channel = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId='+id_channel+'&key='+api_channel+'&maxResults=7&type=video&order=date'
 
-    addEventListener('DOMContentLoaded', () => {
-        const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                //document.getElementById("demo").innerHTML =
-                let youtubeJson = JSON.parse(this.responseText);
 
-                console.log(youtubeJson);
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            //document.getElementById("demo").innerHTML =
+            let youtubeJson = JSON.parse(this.responseText);
 
-                let count = youtubeJson.items;
+            console.log(youtubeJson);
 
-                console.log('count: '+count.lenght)
+            let count = youtubeJson.items;
 
-                document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${youtubeJson.items[0].id.videoId}`);
 
-                // ============== add to galeria ============================
-                for(let n = 1; n < youtubeJson.pageInfo.resultsPerPage; n++){
+            //console.log('id do vídeo um')
 
-                    let article = document.createElement('article');
-                    article.classList.add('play_thumb')
-                    article.innerHTML = `<img src="${youtubeJson.items[n].snippet.thumbnails.medium.url}" alt=""><i class="bi bi-play-fill"></i>`;
-                    article.setAttribute('data-id', ''+youtubeJson.items[n].id.videoId+'');
+            document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${youtubeJson.items[0].id.videoId}`);
 
-                    document.querySelector('.thumbs_video').append(article)
+            // ============== add to galeria ============================
 
-                }
-                /*
-                for(let n = 0; n < dJson.photosets.total; n++){
-                    console.log('loop')
+            for(let n = 1; n < youtubeJson.pageInfo.resultsPerPage; n++){
 
-                    let galeria_link = document.createElement('a');
+                let article = document.createElement('article');
+                article.classList.add('play_thumb')
+                article.innerHTML = `<img src="${youtubeJson.items[n].snippet.thumbnails.medium.url}" alt=""><i class="bi bi-play-fill"></i>`;
+                article.setAttribute('data-id', ''+youtubeJson.items[n].id.videoId+'');
 
-                    galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
-                    galeria_link.setAttribute('target', '_blank');
+                document.querySelector('.thumbs_video').append(article)
 
-                    let title_galeria = document.createElement('div');
-                    title_galeria.classList.add('title_link_galeria');
-                    title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
-
-                    galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
-
-                    galeria_link.append(title_galeria);
-
-                    document.querySelector('.links_galeria').append(galeria_link);
-                }
-                */
-                //document.querySelector('.links_galeria').
-                // ============== add to galeria ============================
             }
-            xhttp.open("GET", url_channel);
-            xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhttp.send();
 
-            $(document).ready(function(){
-            setTimeout(function(){
-                $(".thumbs_video").owlCarousel({
-                    margin:10,
-                    nav:true,
-                    dots: false,
-                    autoplay:true,
-                    autoplayTimeout:2000,
-                    autoplayHoverPause:true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        768:{
-                            items:2
-                        },
-                        1000:{
-                            items:5
-                        }
+            /*
+            for(let n = 0; n < dJson.photosets.total; n++){
+                console.log('loop')
+
+                let galeria_link = document.createElement('a');
+
+                galeria_link.setAttribute('href', 'https://flickr.com/photos/'+dJson.photosets.photoset[n].owner+'/albums/'+dJson.photosets.photoset[n].id);
+                galeria_link.setAttribute('target', '_blank');
+
+                let title_galeria = document.createElement('div');
+                title_galeria.classList.add('title_link_galeria');
+                title_galeria.innerText = ''+dJson.photosets.photoset[n].title._content+'';
+
+                galeria_link.innerHTML = '<img src="https://live.staticflickr.com/'+dJson.photosets.photoset[n].server+'/'+dJson.photosets.photoset[n].primary+'_'+dJson.photosets.photoset[n].secret+'_w.jpg" alt="">'
+
+                galeria_link.append(title_galeria);
+
+                document.querySelector('.links_galeria').append(galeria_link);
+            }
+            */
+            //document.querySelector('.links_galeria').
+            // ============== add to galeria ============================
+        }
+        xhttp.open("GET", url_channel);
+        xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhttp.send();
+
+
+
+    /*
+    for(let n = 0; n < 6; n++){
+
+        let article = document.createElement('article');
+        article.classList.add('play_thumb')
+        article.innerHTML = '<img src="https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822__340.jpg" alt=""><i class="bi bi-play-fill"></i>';
+        article.setAttribute('data-id', id_videos[n]);
+
+        document.querySelector('.thumbs_video').append(article)
+
+    }
+    */
+    $(document).ready(function(){
+        setTimeout(function(){
+            $(".thumbs_video").owlCarousel({
+                margin:10,
+                nav:true,
+                dots: false,
+                autoplay:true,
+                autoplayTimeout:2000,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    1000:{
+                        items:5
                     }
-                });
-            }, 1000);
+                }
+            });
+        }, 1000)
+    });
 
-            setTimeout(function(){
+    setTimeout(function(){
 
-                const articles_play = document.querySelectorAll('.play_thumb');
-                articles_play.forEach((item) => {
+        const articles_play = document.querySelectorAll('.play_thumb');
+        articles_play.forEach((item) => {
 
-                    item.addEventListener('click', () => {
+            item.addEventListener('click', () => {
 
-                        document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${item.getAttribute('data-id')}`);
+                document.getElementById('iframe_video').setAttribute('src', `https://www.youtube.com/embed/${item.getAttribute('data-id')}`);
 
-                    })
-
-                });
-                console.log('plays: '+articles_play.length);
-
-            }, 1000);
+            })
 
         });
+        console.log('plays: '+articles_play.length);
+        
+    }, 1000)
+
+    /*
     
-    })
+    */
+
 </script>
 <!-- ========================================== videos youtube ================================== -->
 
@@ -2511,19 +2545,7 @@ $(document).ready(function() {
 
 
     <script>
-        /*
-                let id_videos = ['HgzGwKwLmgM','4-43lLKaqBQ','5fdnQT_8_Vs','eCyMh-mZ1B0','kJQP7kiw5Fk']
-
-for(let n = 0; n < 6; n++){
-
-    let article = document.createElement('article');
-    article.classList.add('play_thumb')
-    article.innerHTML = '<img src="https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822__340.jpg" alt=""><i class="bi bi-play-fill"></i>';
-    article.setAttribute('data-id', id_videos[n]);
-
-    document.querySelector('.thumbs_video').append(article)
-
-}
+              
 $(document).ready(function(){
     setTimeout(function(){
         $(".thumbs_video").owlCarousel({
@@ -2545,7 +2567,7 @@ $(document).ready(function(){
                 }
             }
         });
-    }, 100)
+    }, 1000)
 });
 
 
@@ -2560,7 +2582,6 @@ articles_play.forEach((item) => {
     })
 
 });
-*/
     </script>
     </div>
 </body>
