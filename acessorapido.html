@@ -4,71 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/myStyle.css">
     <title>Acesso rápido</title>
 </head>
 <body>
 
-    <div class="carousel_fast_access">
+    <div class="carousel_fast_access owl-carousel">
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-mesa.svg" alt="">
             <span>Mesa Diretora</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-comis.svg" alt="">
             <span>Comissões</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-pautas.svg" alt="">
             <span>Pauta das sessões</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-legis.svg" alt="">
             <span>Legislação</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-midias.svg" alt="">
             <span>Mídias digitais</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-asks.svg" alt="">
             <span>Perguntas frequentes</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-access.svg" alt="">
             <span>Acesso à informação</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-services.svg" alt="">
             <span>Serviços do legislativo</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-licitacoes.svg" alt="">
             <span>Licitações</span>
         </a>
 
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-contratos.svg" alt="">
             <span>Contratos</span>
         </a>
 
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-despesas.svg" alt="">
             <span>Despesas</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-servidores.svg" alt="">
             <span>Servidores</span>
         </a>
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-prestacao.svg" alt="">
             <span>Prestação de Contas</span>
         </a>
 
         <a href="">
-            <img src="" alt="">
+            <img src="img/icon-diario.svg" alt="">
             <span>Diário Oficial</span>
         </a>
     </div>
     
+    <script src="javascript/jquery-3.6.0.min.js"></script>
+    <script src="javascript/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".carousel_fast_access").owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                dots: false,
+                autoplay:true,
+                autoplayTimeout:2000,
+                autoplayHoverPause:false,
+                responsive:{
+                    0:{
+                        items:2
+                    },
+                    600:{
+                        items:5
+                    },
+                    1000:{
+                        items:6
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

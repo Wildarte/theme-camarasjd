@@ -37,7 +37,7 @@
 
 <body>
 
-    <div class="search_over">
+    <div class="search_over" id="from_top">
         <span class="btn_slose_search" id="btn_slose_search">
             <i class="bi bi-x-lg"></i>
         </span>
@@ -96,7 +96,7 @@
 				</div>
 
 			</div>
-            <div class="hero_top over_hero_top">
+            <div class="hero_top">
                 <div id="logo">
                     <a href="#" title="#">
                         <span id="portal-title">Portal Title</span>
@@ -518,7 +518,7 @@
                             <h3>A Câmara</h3>
 
                             <ul>
-                                <li><a href="">Insititucioal</a></li>
+                                <li><a href="">Institucional</a></li>
                                 <li><a href="">Vereadores</a></li>
                                 <li><a href="">Mesa Diretora</a></li>
                                 <li><a href="">Comissões</a></li>
@@ -593,33 +593,44 @@
                         <div class="content_col_footer">
                             <h3>Onde Estamos</h3>
 
-                            <p>Av. Manoel Divino, 75 - CEP 64245-000</p>
+                            <p><span><i class="bi bi-geo-alt"></i></span> Av. Manoel Divino, 75 - CEP 64245-000</p>
                         </div>
 
                         <div class="content_col_footer">
                             <h3>Atendimento</h3>
 
-                            <p>Segunda à Sexta</p>
-                            <p>8h00 às 13h00</p>
+                            <p><span><i class="bi bi-calendar-check"></i></span> Segunda à Sexta</p>
+                            <p><span><i class="bi bi-stopwatch"></i></span> 8h00 às 13h00</p>
                         </div>
 
                         <div class="content_col_footer">
                             <h3>Sessões ordinárias</h3>
 
-                            <p>Três primeiras Sextas-feiras às 19h00</p>
+                            <p><span><i class="bi bi-calendar-check"></i></span> Três primeiras Sextas-feiras às 19h00</p>
                         </div>
 
                         <div class="content_col_footer">
                             <h3>Contato</h3>
 
-                            <p><a href="mailto:camara@saojosedodivino.pi.leg.br">camara@saojosedodivino.pi.leg.br</a></p>
-                            <p><a href="tel:+558633461254">(86) 3346-1254</a></p>
+                            <p><a href="mailto:camara@saojosedodivino.pi.leg.br"><span><i class="bi bi-envelope"></i></span> camara@saojosedodivino.pi.leg.br</a></p>
+                            <p><a href="tel:+558633461254"><span><i class="bi bi-phone"></i></span> (86) 3346-1254</a></p>
                         </div>
                         
                     </div>
                 </div>
+                <hr class="hr_line">
+                <div class="row_footer">
+                    <div class="col_footer_50">
+                        <p>Site desenvolvido pelo interlegis</p>
+                        <p>Customização: Câmara Municipal de São José do Divino</p>
+                    </div>
+                    <div class="col_footer_50 bottom_footer_right">
+                        <p><a href="https://www.saojosedodivino.pi.leg.br/login">Acesso</a></p>
+                    </div>
+                </div>
             </div>
         </div>
+
         
         <style>
         .modal{
@@ -719,6 +730,11 @@
         </div>
     </div>
 
+    <div class="float_btn_up">
+        <span class="">
+            <i class="bi bi-arrow-up-circle"></i>
+        </span>
+    </div>
     <script>
          //====== btn  =======
          const btn = document.getElementById('open_modal');
