@@ -64,4 +64,10 @@ if(hero_slide_uni){
 
 }
 
-console.log(hero_slide_uni.length)
+//==================== animation itens header ==================================
+const itens_bottom_hero = document.querySelectorAll('. itens_bottom_hero');
+itens_bottom_hero.forEach((item) => {
+
+    
+
+});

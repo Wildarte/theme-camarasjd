@@ -26,6 +26,7 @@
     <link media="all" href="css/custom-sjd.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick.css" type="text/css" rel="stylesheet">
     <link media="all" href="css/slick-theme.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
@@ -161,22 +162,24 @@
 
         <div class="hero" id="header" role="banner">
 
-            <!-- ===================== carrousel hero ================================= -->
-            <img class="hero_slide_uni hero_slide_uni_active" src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_960_720.jpg" alt="">
-            <img class="hero_slide_uni" src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_960_720.jpg" alt="">
-            <video class="hero_slide_uni" width="" autoplay>
-                <source src="img/city.mp4" type="video/mp4">
-              </video>
-            <!-- ===================== carrousel hero ================================= -->
+            
             
             <!-- top hero -->
             <div class="hero_content">
                 <div class="">
-                    home
+                    <div style="opacity: 0;">home</div>
                 </div>
 
+                <!-- ===================== carrousel hero ================================= -->
+                <div class="over_slide_hero">
+                    <img class="hero_slide_uni hero_slide_uni_active" src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_960_720.jpg" alt="">
+                    <img class="hero_slide_uni" src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_960_720.jpg" alt="">
+                    <video class="hero_slide_uni" width="" autoplay><source src="img/city.mp4" type="video/mp4"></video>
+                </div>
+                <!-- ===================== carrousel hero ================================= -->
+
                 <div class="hero_center">
-                    <h1>CÂMARA MUNICIPAL DE SÃO JOSÉ DO DIVINO</h1>
+                    <h1 class="animate__animated animate__bounceInDown">CÂMARA MUNICIPAL DE SÃO JOSÉ DO DIVINO</h1>
                 </div>
 
                 <div class="over_redes_sociais">
@@ -196,23 +199,23 @@
                 <div class="header_bottom">
                     <ul class="list_menu_bottom">
                         <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">
-                            <img src="img/portal-transparencia.png" alt="">
+                            <img class="animate__animated animate__backInUp itens_bottom_hero" style="--animate-duration: .5s" src="img/portal-transparencia.png" alt="">
                         </a></li>
                         
                         <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/carta-de-servicos" target="_blank" title="Acesso aos serviços">
-                            <img src="img/carta-serv.png" alt="">
+                            <img class="animate__animated animate__backInUp itens_bottom_hero" style="--animate-duration: .6s" src="img/carta-serv.png" alt="">
                         </a></li>
 
                         <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/servicosonline/ouvidoria" target="_blank" title="Cadastrar e consultar informação">
-                            <img src="img/ouvidoria.png" alt="">
+                            <img class="animate__animated animate__backInUp itens_bottom_hero" style="--animate-duration: .7s" src="img/ouvidoria.png" alt="">
                         </a></li>
 
                         <li><a href="http://transparencia.saojosedodivino.pi.leg.br/camarasaojosedodivino/acessoinformacao" target="_blank" title="Informações ao Cidadão">
-                            <img src="img/e-sic.png" alt="">
+                            <img class="animate__animated animate__backInUp itens_bottom_hero" style="--animate-duration: .8s" src="img/e-sic.png" alt="">
                         </a></li>
 
                         <li id="portaltab-sapl" class="plain last-item"><a href="https://sapl.saojosedodivino.pi.leg.br/" title="Sistema apoio ao processo legislativo">
-                            <img src="img/sapl.png" alt="">
+                            <img class="animate__animated animate__backInUp itens_bottom_hero" style="--animate-duration: .9s" src="img/sapl.png" alt="">
                         </a></li>
                     </ul>
                 </div>
