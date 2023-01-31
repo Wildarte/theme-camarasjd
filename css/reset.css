@@ -34,9 +34,20 @@
 #portal-personaltools{
     display: none;
 }
+#content [class|="cover"] h2{
+    border-top: none;
+    background-color: transparent;
+    color: unset;
+    font-size: unset
+}
 
 @media(max-width: 1080px){
     #content{
         margin: 0;
+    }
+}
+@media(max-width: 768px){
+    #portal-column-one, #portal-column-two, #portal-column-content{
+        padding: 0!important;
     }
 }
