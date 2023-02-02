@@ -3,7 +3,7 @@ const search_over = document.querySelector('.search_over');
 const btn_slose_search = document.getElementById('btn_slose_search');
 const hero_top = document.querySelector('.hero_top');
 const float_btn_up = document.querySelector('.float_btn_up');
-const hero_slide_uni = document.querySelectorAll('.hero_slide_uni');
+
 
 open_search.addEventListener('click', () => {
 
@@ -43,26 +43,95 @@ float_btn_up.addEventListener('click', () => {
 
 });
 
+
+//=========================== slide hero ================================
+const hero_slide_uni = document.querySelectorAll('.slide_single');
+const dots_slide_hero = document.querySelectorAll('.count_dot_slide');
+const info_slide_single = document.querySelectorAll('.info_slide_single');
+let uni = 0;
 if(hero_slide_uni){
-
-
-    let uni = 0;
 
     setInterval(function(){
         hero_slide_uni.forEach((item) => {
             item.classList.remove('hero_slide_uni_active');    
+        });
+        dots_slide_hero.forEach((item) => {
+            item.classList.remove('count_dot_slide_active');
         })
+        info_slide_single.forEach((item) => {
+            item.querySelector('h2').classList.remove('animate__zoomInDown');
+        });
+        info_slide_single.forEach((item) => {
+            if(item.querySelector('h3')){
+                item.querySelector('h3').classList.remove('animate__slideInUp');
+            }
+        });
+        info_slide_single.forEach((item) => {
+            if(item.querySelector('a.link_slide_single')){
+                item.querySelector('a.link_slide_single').classList.remove('animate__slideInUp');
+            }
+        });
+        if(info_slide_single[uni].querySelector('h3')){
+            info_slide_single[uni].querySelector('h3').classList.add('animate__slideInUp');
+        }
+        if(info_slide_single[uni].querySelector('a.link_slide_single')){
+            info_slide_single[uni].querySelector('a.link_slide_single').classList.add('animate__slideInUp');
+        }
+        info_slide_single[uni].querySelector('h2').classList.add('animate__zoomInDown');
         hero_slide_uni[uni].classList.add('hero_slide_uni_active');
+        dots_slide_hero[uni].classList.add('count_dot_slide_active');
         uni += 1;
         if(uni == hero_slide_uni.length){
             uni = 0
         }
     }, 5000);
 
-
-
-
 }
+/*
+dots_slide_hero.forEach((item, index) => {
+
+    uni = index;
+
+    item.addEventListener('click', () => {
+        hero_slide_uni.forEach((item) => {
+            item.classList.remove('hero_slide_uni_active');    
+        });
+        dots_slide_hero.forEach((item) => {
+            item.classList.remove('count_dot_slide_active');
+        });
+        info_slide_single.forEach((item) => {
+            item.querySelector('h2').classList.remove('animate__zoomInDown');
+        });
+        info_slide_single.forEach((item) => {
+            if(item.querySelector('h3')){
+                item.querySelector('h3').classList.remove('animate__slideInUp');
+            }
+        });
+        info_slide_single.forEach((item) => {
+            if(item.querySelector('a.link_slide_single')){
+                item.querySelector('a.link_slide_single').classList.remove('animate__slideInUp');
+            }
+        });
+
+        if(info_slide_single[uni].querySelector('h3')){
+            info_slide_single[uni].querySelector('h3').classList.add('animate__slideInUp');
+        }
+        if(info_slide_single[uni].querySelector('a.link_slide_single')){
+            info_slide_single[uni].querySelector('a.link_slide_single').classList.add('animate__slideInUp');
+        }
+        info_slide_single[uni].querySelector('h2').classList.add('animate__zoomInDown');
+        hero_slide_uni[uni].classList.add('hero_slide_uni_active');
+        dots_slide_hero[uni].classList.add('count_dot_slide_active');
+
+        console.log('uni: '+uni);
+
+    });
+
+});
+*/
+//=========================== slide hero ================================
+
+
 
 //==================== btns control menu access ==================================
 const btn_mob_access = document.querySelector('.btn_mob_access');
