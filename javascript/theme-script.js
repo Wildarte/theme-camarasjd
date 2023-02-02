@@ -158,6 +158,38 @@ btn_open_menu_main.addEventListener('click', () => {
 //==================== btns control menu access ==================================
 
 
+//=============================== control submenu ===================================
+const submenu_desktop = document.querySelectorAll('.has-submenu');
+
+submenu_desktop.forEach((item) => {
+
+    item.addEventListener('mouseover', () => {
+        
+        let height_item = 0;
+
+        let all_itens = item.querySelectorAll('.submenu li');
+
+        all_itens.forEach((item2) => {
+            height_item += item2.getBoundingClientRect().height;
+        });
+        console.log(height_item);
+
+        item.querySelector('.submenu').style.height = height_item+20+"px";
+    })
+
+});
+submenu_desktop.forEach((item) => {
+
+    item.addEventListener('mouseleave', () => {
+
+        item.querySelector('.submenu').style.height = "0px";
+    })
+
+});
+//=============================== control submenu ===================================
+
+
+
 //=========================== control submenu mobile ================================
 const itens_submenu = document.querySelectorAll('.has-submenu');
 

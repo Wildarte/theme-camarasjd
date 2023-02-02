@@ -242,7 +242,7 @@ body::-webkit-scrollbar-thumb{
     background-color: var(--color-white);
     display: block;
 }
-#sobre{
+.sobre_menu{
     background-color: transparent;
 }
 
@@ -274,6 +274,9 @@ body::-webkit-scrollbar-thumb{
     animation: margin_down .6s forwards;
 }
 .over_hero_top #titleHeader{
+    color: var(--color-black);
+}
+.bg-dark-green #titleHeader{
     color: var(--color-black);
 }
 .over_hero_top a{
@@ -396,14 +399,15 @@ body::-webkit-scrollbar-thumb{
     min-width: 150px;
     height: 0;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(10, 10, 10, .2);
-    transition: all .2s;
+    opacity: 0;
+    width: 250px;
+    transition: all .25s;
 }
 .has-submenu:hover ul.submenu{
-    height: auto;
-    padding: 12px;
-    transition: all .2s;
+    padding: 10px;
+    opacity: 1;
 }
 .has-submenu .submenu li{
     width: 100%;
@@ -411,8 +415,15 @@ body::-webkit-scrollbar-thumb{
 }
 .has-submenu .submenu a{
     color: var(--color-black)!important;
-    padding: 10px 0!important;
+    padding: 5px 0!important;
     display: block;
+    transition: all .1s;
+    word-wrap: normal;
+    border-bottom: 1px solid #eee!important;
+}
+.has-submenu .submenu a:hover{
+    color: var(--color-dark-main)!important;
+    border-bottom: 1px solid var(--color-dark-main)!important;
 }
 /* ==================================== submenu  ================================ */
 
@@ -644,6 +655,7 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     box-shadow: 2px 2px 10px rgba(10, 10, 10, .7);
     cursor: pointer;
+    z-index: 10;
     transition: all .23s;
 }
 .show_btn_up{
@@ -981,6 +993,7 @@ a.btn_galeria:hover{
 }
 .phot_left img{
     max-width: 100%;
+    width: 100%;    
 }
 .content_phot{
     display: flex;
@@ -1440,7 +1453,7 @@ a.btn_galeria:hover{
         font-size: 4em;
         color: var(--color-white);
     }
-    #sobre{
+    .sobre_menu{
         position: fixed;
         top: 0;
         right: -110%;
@@ -1459,12 +1472,12 @@ a.btn_galeria:hover{
     .open_menu_sobre a{
         color: var(--color-black)!important;
     }
-    #sobre ul{
+    .sobre_menu ul{
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
     }
-    #sobre ul li{
+    .sobre_menu ul li{
         width: 100%;
         text-align: center;
         padding: 10px;
@@ -1536,6 +1549,15 @@ a.btn_galeria:hover{
     }
     .list_menu_bottom li a img{
         max-width: 45%;
+    }
+    .has-submenu .submenu a{
+        text-align: center;
+    }
+    .header_bottom{
+        display: none;
+    }
+    .dots_slide_hero{
+        display: none;
     }
 
 }

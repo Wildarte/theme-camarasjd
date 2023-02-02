@@ -40,7 +40,9 @@
     color: unset;
     font-size: unset
 }
-
+#sobre{
+    background: unset!important;
+}
 @media(max-width: 1080px){
     #content{
         margin: 0;
