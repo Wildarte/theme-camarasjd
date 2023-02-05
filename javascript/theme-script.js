@@ -19,20 +19,23 @@ btn_slose_search.addEventListener('click', () => {
 
 
 //========================== scroll menu header =============================
+const sobre_menu = document.querySelector('.sobre_menu');
 document.addEventListener('scroll', (e) => {
 
-    let hw = window.scrollY;
+    if(!sobre_menu.classList.contains('open_menu_sobre')){
+        let hw = window.scrollY;
 
-    let height_header = hero_top.getBoundingClientRect().height;
-
-    if(hw > 200){
-        hero_top.classList.add('over_hero_top');
-        document.body.style.marginTop = height_header+"px";
-        float_btn_up.classList.add('show_btn_up');
-    }else{
-        hero_top.classList.remove('over_hero_top');
-        document.body.style.marginTop = "0px";
-        float_btn_up.classList.remove('show_btn_up');
+        let height_header = hero_top.getBoundingClientRect().height;
+    
+        if(hw > 200){
+            hero_top.classList.add('over_hero_top');
+            document.body.style.marginTop = height_header+"px";
+            float_btn_up.classList.add('show_btn_up');
+        }else{
+            hero_top.classList.remove('over_hero_top');
+            document.body.style.marginTop = "0px";
+            float_btn_up.classList.remove('show_btn_up');
+        }
     }
 
 });
@@ -45,6 +48,7 @@ float_btn_up.addEventListener('click', () => {
 
 
 //=========================== slide hero ================================
+
 const hero_slide_uni = document.querySelectorAll('.slide_single');
 const dots_slide_hero = document.querySelectorAll('.count_dot_slide');
 const info_slide_single = document.querySelectorAll('.info_slide_single');
@@ -84,7 +88,7 @@ if(hero_slide_uni){
         if(uni == hero_slide_uni.length){
             uni = 0
         }
-    }, 5000);
+    }, 6000);
 
 }
 /*
@@ -150,41 +154,82 @@ close_menu_access.addEventListener('click', () => {
     head_menu_access.classList.remove('open_head_menu_access');
     menu_dub.classList.remove('open_menu_sobre');
     head_menu_access.classList.remove('open_head_menu_access_bg_white');
+    document.querySelector('.over_screen').classList.remove('open_over_screen');
 });
 btn_open_menu_main.addEventListener('click', () => {
     menu_dub.classList.add('open_menu_sobre');
     head_menu_access.classList.add('open_head_menu_access_bg_white');
+    document.querySelector('.over_screen').classList.add('open_over_screen');
 });
+
 //==================== btns control menu access ==================================
 
 
 //=============================== control submenu ===================================
 const submenu_desktop = document.querySelectorAll('.has-submenu');
+if(!window.matchMedia("(max-width: 820px)").matches){
 
-submenu_desktop.forEach((item) => {
+    submenu_desktop.forEach((item) => {
+    
+        item.addEventListener('mouseover', () => {
+            
+            let height_item = 0;
+    
+            let all_itens = item.querySelectorAll('.submenu li');
+    
+            all_itens.forEach((item2) => {
+                height_item += item2.getBoundingClientRect().height;
+            });
+            console.log(height_item);
+    
+            item.querySelector('.submenu').style.height = height_item+20+"px";
+        })
+    
+    });
+    submenu_desktop.forEach((item) => {
+    
+        item.addEventListener('mouseleave', () => {
+    
+            item.querySelector('.submenu').style.height = "0px";
+        })
+    
+    });
+    console.log('é maior que 820px')
+}else{
 
-    item.addEventListener('mouseover', () => {
-        
-        let height_item = 0;
+    submenu_desktop.forEach((item, index) => {
 
-        let all_itens = item.querySelectorAll('.submenu li');
+        item.addEventListener('click', () => {
 
-        all_itens.forEach((item2) => {
-            height_item += item2.getBoundingClientRect().height;
+            if(item.querySelector('.submenu').classList.contains('open_submenu_mobile')){
+                item.querySelector('.submenu').classList.remove('open_submenu_mobile')
+            }else{
+                submenu_desktop.forEach((item2) => {
+                    item2.querySelector('.submenu').classList.remove('open_submenu_mobile')
+                });
+    
+                submenu_desktop[index].querySelector('.submenu').classList.add('open_submenu_mobile');
+            }
+
         });
-        console.log(height_item);
 
-        item.querySelector('.submenu').style.height = height_item+20+"px";
-    })
+    });
 
+}
+close_menu_access.addEventListener('click', () => {
+    submenu_desktop.forEach((item2) => {
+        item2.querySelector('.submenu').classList.remove('open_submenu_mobile')
+    });
 });
-submenu_desktop.forEach((item) => {
-
-    item.addEventListener('mouseleave', () => {
-
-        item.querySelector('.submenu').style.height = "0px";
-    })
-
+document.querySelector('.over_screen').addEventListener('click', () => {
+    menu_access.classList.remove('open_menu_access')
+    head_menu_access.classList.remove('open_head_menu_access');
+    menu_dub.classList.remove('open_menu_sobre');
+    head_menu_access.classList.remove('open_head_menu_access_bg_white');
+    document.querySelector('.over_screen').classList.remove('open_over_screen');
+    submenu_desktop.forEach((item2) => {
+        item2.querySelector('.submenu').classList.remove('open_submenu_mobile')
+    });
 });
 //=============================== control submenu ===================================
 
@@ -231,3 +276,28 @@ btn_head_header_bottom.addEventListener('click', () => {
     }
 });
 //============================== control menu itens bottom hero ====================================
+
+
+
+//================================ effect itens menu hover ===================================
+/*
+const itens_hover = document.querySelectorAll('.menu_dub ul li.has-submenu > a');
+const li_itens_hover = document.querySelectorAll('.menu_dub ul li.has-submenu');
+
+itens_hover.forEach((item, index) => {
+
+    let text_item_hover = item.innerText;
+
+    console.log('height item: '+text_item_hover);
+
+    let item_hover_before = document.createElement('span');
+    item_hover_before.classList.add('item_before_class');
+    item_hover_before.innerText = text_item_hover;
+
+    itens_hover[index].append(item_hover_before);
+
+    console.log(item_hover_before);
+
+});
+*/
+//================================ effect itens menu hover ===================================
