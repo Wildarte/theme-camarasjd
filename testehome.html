@@ -58,11 +58,7 @@
     
     <div class="barra_header_topo">
     		<div class="barra_header">
-                <div class="btn_mob_access">
-                    <div class="rec_btn_mob"></div>
-                    <div class="rec_btn_mob"></div>
-                    <div class="rec_btn_mob"></div>
-                </div>
+
 				<div class="barra_header_left">
 					<ul id="accessibility">
                         
@@ -75,24 +71,13 @@
                          <li id="siteaction-fontlarge"><a href="javascript:setBaseFontSize('smallText',1);" title="Aumentar Fonte">A+</a></li>
 
                          <li id="siteaction-fontnormal" class="last-item"><a href="javascript:setBaseFontSize('',1);" title="Fonte Normal">A</a></li>
-
-                         <li id="siteaction-vlibras"><a href="http://www.vlibras.gov.br/" accesskey="" title="Acesso ao conteúdo usando o VLibras"><i class="fas fa-sign-language portal-siteactions-awesome"></i></a></li>
-
-						 <li><a href="http://transparencia.saojosedodivino.pi.leg.br" target="_blank" title="Acesso ao Portal da transparência">TRANSPARÊNCIA</a></li>
-						
-						<li><a href="https://www.saojosedodivino.pi.leg.br/o-municipio/legislacao-municipal" target="_self" title="Legislação municipal">LEGISLAÇÃO</a>
-						</li>
 						
 					</ul>
 				</div>
 
-				<div class="barra_header_right">
+				<div class="barra_header_right">                  
 
-                    <div class="btn_search open_search">
-                        <i class="bi bi-search"></i>
-                    </div>                    
-
-					<ul class="icons-acessibilidade-right">
+					<ul class="icons-acessibilidade-right hide_on_mobile">
 						<li><a href="http://www.saojosedodivino.pi.leg.br/institucional/faq" target="_self" title="Perguntas frequentes">PERGUNTAS</a></li>
 
                         <li><a href="https://www.saojosedodivino.pi.leg.br/contact-info" target="_self" title="Contato">CONTATO</a>
@@ -103,6 +88,9 @@
 
 			</div>
             <div class="hero_top">
+                <div class="btn_mob_access">
+                    <i class="bi bi-universal-access-circle"></i>
+                </div>
                 <div id="logo">
                     <a href="#" title="#">
                         <span id="portal-title">Portal Title</span>
@@ -112,6 +100,7 @@
                 </div>
                 <div class="over_screen"></div>
                 <div id="sobreUnset" class="sobre_menu menu menu_dub">
+                    
                     <div id="logo" class="logo_menu_mobile">
                         <a href="#" title="#">
                             <span id="portal-title">Portal Title</span>
@@ -280,6 +269,10 @@
                     </div>
                 </div>
 
+                <div class="btn_search open_search">
+                    <i class="bi bi-search"></i>
+                </div>
+
                 <div class="btn_open_menu_main">
                     <span>
                         <i class="bi bi-list"></i>
@@ -315,18 +308,10 @@
 
                 <!-- ===================== carrousel hero ================================= -->
                 <div class="over_slide_hero">
-                   
-                    <div class="slide_single hero_slide_uni_active">
-                        <img class="hero_slide_uni" src="http://www.ipatrimonio.org/wp-content/uploads/2018/11/ipatrimonio_S%C3%A3o-Jos%C3%A9-do-Divino-Conjunto-Paisag%C3%ADstico-da-Pedra-Riscada.jpg" alt="">
-                        <div class="info_slide_single">
-                            <h2 class="animate__animated animate__zoomInDown">São José do Divino</h2>
-                            <h3 class="animate__animated animate__slideInUp">"Tú és Divina, tú és briosa!"</h3>
-                        </div>
-                    </div>
 
-                    <div class="slide_single ">
+                    <div class="slide_single hero_slide_uni_active">
                         <video autoplay loop muted class="">
-                            <source src="img/insti.mp4" type="video/mp4">
+                            <source src="https://www.saojosedodivino.pi.leg.br/videos/video_slide/at_download/file" type="video/mp4">
                         </video>
                         <div class="info_slide_single">
                             <h2 class="animate__animated">Conheça um pouco da nossa história</h2>
@@ -335,18 +320,33 @@
                         </div>
                     </div>
 
-                    
                     <div class="slide_single">
-                        <img src="https://digitaliza-institucional.s3.us-east-2.amazonaws.com/municipio-de-sao-jose-do-divino/Turismo/turismo1.jpg" alt="" class="hero_slide_uni">
+                        <video autoplay loop muted class="">
+                            <source src="https://www.saojosedodivino.pi.leg.br/videos/video_slide/at_download/file" type="video/mp4">
+                        </video>
+                        <div class="info_slide_single">
+                            <h2 class="animate__animated animate__zoomInDown">São José do Divino</h2>
+                            <h3 class="animate__animated animate__slideInUp">"Tú és Divina, tú és briosa!"</h3>
+                        </div>
+                    </div>
+                   
+                    <div class="slide_single ">
+                        <img class="hero_slide_uni" src="http://www.ipatrimonio.org/wp-content/uploads/2018/11/ipatrimonio_S%C3%A3o-Jos%C3%A9-do-Divino-Conjunto-Paisag%C3%ADstico-da-Pedra-Riscada.jpg" alt="">
                         <div class="info_slide_single">
                             <h2 class="animate__animated">CÂMARA MUNICIPAL</h2>
                             <h3 class="animate__animated">"Representatividade e transparência"</h3>
                         </div>
                     </div>
+                    
+                    <div class="slide_single">
+                        <img src="https://digitaliza-institucional.s3.us-east-2.amazonaws.com/municipio-de-sao-jose-do-divino/Turismo/turismo1.jpg" alt="" class="hero_slide_uni">
+                        
+                    </div>
  
 
                     <div class="dots_slide_hero">
                         <span class="count_dot_slide count_dot_slide_active"></span>
+                        <span class="count_dot_slide"></span>
                         <span class="count_dot_slide"></span>
                         <span class="count_dot_slide"></span>
                     </div>

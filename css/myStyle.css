@@ -36,6 +36,22 @@ body::-webkit-scrollbar-thumb{
 .bg-dark-green a{
     color: #232323!important;
 }
+.bg-dark-green i{
+    color: var(--color-black);
+}
+.bg-dark-green .btn_open_menu_main span i{
+    color: var(--color-black);
+}
+.bg-dark-green .btn_search i{
+    color: var(--color-black);
+}
+.bg-dark-green .has-submenu > a::after {
+    content: '';
+    border-top: 5px solid #000!important;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-left: 5px;
+}
 #main{
     max-width: var(--container);
     margin: auto;
@@ -118,7 +134,7 @@ body::-webkit-scrollbar-thumb{
     margin-top: -20vh;
 }
 .hero{
-    height: calc(100vh + 60px)!important;
+    height: calc(100vh + 60px);
 }
 .hero_slide{
     position: absolute;
@@ -146,7 +162,7 @@ body::-webkit-scrollbar-thumb{
 .slide_single video{
     position: absolute;
     width: auto;
-    height: 100%;
+    height: 130%;
 }
 .hero_slide_uni_active{
     opacity: 1;
@@ -305,6 +321,12 @@ body::-webkit-scrollbar-thumb{
     border-right: 5px solid transparent;
     margin-left: 5px;
 }
+.over_hero_top .btn_mob_access{
+    color: var(--color-black);
+}
+.over_hero_top .btn_search i{
+    color: var(--color-black);
+}
 @keyframes margin_down {
     from{
         top: -200px;
@@ -377,7 +399,10 @@ body::-webkit-scrollbar-thumb{
 /* ======================================= hero ==================================== */
 .menu_dub ul{
     display: flex;
-    
+}
+.menu_dub > ul{
+
+    margin-left: 10px;
 }
 .menu_dub ul li a{
     text-decoration: none;
@@ -385,6 +410,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 16px;
     border-right: none!important;
     color: #ffffff;
+}
+.menu_dub #portal-logo{
+    display: none;
 }
 .list_menu_bottom li{
     border-right: 1px solid var(--color-white);
@@ -487,7 +515,6 @@ body::-webkit-scrollbar-thumb{
 }
 .has-submenu .submenu a:hover{
     color: var(--color-dark-main)!important;
-    border-bottom: 1px solid var(--color-dark-main)!important;
 }
 /* ==================================== submenu  ================================ */
 
@@ -577,13 +604,16 @@ body::-webkit-scrollbar-thumb{
 .btn_search{
     cursor: pointer;
     margin-right: 10px;
+    margin-left: 10px;
     border: 1px solid var(--color-white);
     padding: 2px 5px;
     border-radius: 4px;
-    background-color: var(--color-white);
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
 }
 .btn_search i{
-    color: var(--color-dark-main);
+    color: var(--color-white);
     font-size: 1em;
 }
 
@@ -1380,6 +1410,10 @@ a.btn_galeria:hover{
 .thumbs_video .play_thumb:hover img{
     filter: brightness(60%);
 }
+#portal-logo img{
+    width: 75px;
+    height: auto;
+}
 @keyframes pisca_play {
     from{
         border: 2px solid #fff;
@@ -1452,6 +1486,10 @@ a.btn_galeria:hover{
 /* style content homepage */
 
 @media(max-width: 820px){
+    .barra_header{
+        padding: 0;
+        border: none;
+    }
     .barra_header_left{
         align-items: center;
     }
@@ -1461,10 +1499,13 @@ a.btn_galeria:hover{
     .btn_mob_access{
         display: flex;
         flex-wrap: wrap;
-        align-content: space-between;
-        width: 32px;
-        height: 22px;
+        align-items: center;
         cursor: pointer;
+        margin-right: 10px;
+        color: var(--color-white);
+    }
+    .btn_mob_access i{
+        font-size: 3em;
     }
     .rec_btn_mob{
         width: 100%;
@@ -1484,16 +1525,17 @@ a.btn_galeria:hover{
         align-content: flex-start;
         justify-content: center;
         position: fixed;
-        top: -110%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-main);
+        top: 0;
+        left: -100%;
+        width: 170px;
+        height: auto;
+        background-color: var(--color-white);
         z-index: 10001;
+        box-shadow: 2px 2px 10px rgb(10 10 10 / 90%);
         transition: all .13s;
     }
     .open_menu_access{
-        top: 0!important
+        left: 0!important
     }
     .barra_header_left ul#accessibility li{
         width: 100%;
@@ -1503,6 +1545,7 @@ a.btn_galeria:hover{
     .barra_header_left ul#accessibility li a{
         padding: 10px;
         font-size: 1.2em;
+        color: var(--color-dark-main)!important;
     }
     .head_menu_access{
         display: flex;
@@ -1703,6 +1746,14 @@ a.btn_galeria:hover{
     .logo_menu_mobile{
         display: flex;
     }
+    .menu_dub #portal-logo {
+        display: flex;
+        color: #000!important;
+        font-size: .8em;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 @media(max-width: 768px){
@@ -1725,12 +1776,24 @@ a.btn_galeria:hover{
     .uni_insti_video iframe{
         height: 200px;
     }
-
-    .barra_header{
-        display: none;
+    .btn_search{
+        font-size: 1.5em;
+        padding: 2px 5px;
     }
-    .dots_slide_hero{
-        display: none;
+    .btn_search i{
+        font-size: 1.5em;
+    }
+    .dots_slide_hero, .hide_on_mobile{
+        display: none!important;
+    }
+    #navigation{
+        display: none!important;
+    }
+    .search_over_content #portal-searchbox form input.searchButton{
+        width: 50px;
+    }
+    .search_over_content #portal-searchbox form input{
+        font-size: 1.4em!important;
     }
 }
 
@@ -1738,12 +1801,6 @@ a.btn_galeria:hover{
 @media(max-width: 600px){
     .barra_header_right ul li a{
         font-size: .9em;
-    }
-    .btn_search{
-        padding: 0 5px;
-    }
-    .btn_search i{
-        font-size: .875em;
     }
     .col_footer, .col_footer_50{
         flex-basis: 100%;
@@ -1787,5 +1844,11 @@ a.btn_galeria:hover{
 @media(max-width: 480px){
     #header > div{
         width: 100%;
+    }
+    .hero_top #portal-logo{
+        font-size: .8em;
+    }
+    .hero_top #portal-logo img{
+        width: 50px;
     }
 }

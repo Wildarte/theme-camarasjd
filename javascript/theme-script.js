@@ -17,6 +17,24 @@ btn_slose_search.addEventListener('click', () => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    let height_top = document.querySelector('.barra_header_topo').getBoundingClientRect().height;
+    let hero = document.querySelector('.hero');
+
+    if(!window.matchMedia('(max-width: 820px)').matches){
+        
+        console.log(height_top);
+    
+        hero.style.height = "calc(100vh)";
+        hero.style.marginTop = "-"+height_top+"px";
+
+    }else{
+        hero.style.marginTop = "-"+(height_top+15)+"px";
+        hero.style.height = "calc(100vh)";
+    }
+
+});
 
 //========================== scroll menu header =============================
 const sobre_menu = document.querySelector('.sobre_menu');
@@ -31,6 +49,8 @@ document.addEventListener('scroll', (e) => {
             hero_top.classList.add('over_hero_top');
             document.body.style.marginTop = height_header+"px";
             float_btn_up.classList.add('show_btn_up');
+            menu_access.classList.remove('open_menu_access');
+            menu_access.style.marginTop = 0
         }else{
             hero_top.classList.remove('over_hero_top');
             document.body.style.marginTop = "0px";
@@ -53,6 +73,7 @@ const hero_slide_uni = document.querySelectorAll('.slide_single');
 const dots_slide_hero = document.querySelectorAll('.count_dot_slide');
 const info_slide_single = document.querySelectorAll('.info_slide_single');
 let uni = 0;
+let uni2 = 0;
 if(hero_slide_uni){
 
     setInterval(function(){
@@ -62,9 +83,21 @@ if(hero_slide_uni){
         dots_slide_hero.forEach((item) => {
             item.classList.remove('count_dot_slide_active');
         })
+
+        hero_slide_uni[uni].classList.add('hero_slide_uni_active');
+        dots_slide_hero[uni].classList.add('count_dot_slide_active');
+        uni += 1;
+        if(uni == hero_slide_uni.length){
+            uni = 0
+        }
+    }, 6000);
+
+    setInterval(function(){
+
         info_slide_single.forEach((item) => {
             item.querySelector('h2').classList.remove('animate__zoomInDown');
         });
+
         info_slide_single.forEach((item) => {
             if(item.querySelector('h3')){
                 item.querySelector('h3').classList.remove('animate__slideInUp');
@@ -75,20 +108,19 @@ if(hero_slide_uni){
                 item.querySelector('a.link_slide_single').classList.remove('animate__slideInUp');
             }
         });
-        if(info_slide_single[uni].querySelector('h3')){
-            info_slide_single[uni].querySelector('h3').classList.add('animate__slideInUp');
+
+        if(info_slide_single[uni2].querySelector('h3')){
+            info_slide_single[uni2].querySelector('h3').classList.add('animate__slideInUp');
         }
-        if(info_slide_single[uni].querySelector('a.link_slide_single')){
-            info_slide_single[uni].querySelector('a.link_slide_single').classList.add('animate__slideInUp');
+        if(info_slide_single[uni2].querySelector('a.link_slide_single')){
+            info_slide_single[uni2].querySelector('a.link_slide_single').classList.add('animate__slideInUp');
         }
-        info_slide_single[uni].querySelector('h2').classList.add('animate__zoomInDown');
-        hero_slide_uni[uni].classList.add('hero_slide_uni_active');
-        dots_slide_hero[uni].classList.add('count_dot_slide_active');
-        uni += 1;
-        if(uni == hero_slide_uni.length){
-            uni = 0
+        info_slide_single[uni2].querySelector('h2').classList.add('animate__zoomInDown');
+        uni2 += 1;
+        if(uni2 == info_slide_single.length){
+            uni2 = 0
         }
-    }, 6000);
+    }, 3000);
 
 }
 /*
@@ -146,8 +178,16 @@ const menu_dub = document.querySelector('.menu_dub');
 const btn_open_menu_main = document.querySelector('.btn_open_menu_main');
 
 btn_mob_access.addEventListener('click', () => {
-    menu_access.classList.add('open_menu_access');
-    head_menu_access.classList.add('open_head_menu_access');
+    if(menu_access.classList.contains('open_menu_access')){
+        menu_access.classList.remove('open_menu_access');
+        menu_access.style.marginTop = 0
+    }else{
+        let h_top = document.querySelector('.hero_top').getBoundingClientRect().height;
+        menu_access.style.marginTop = h_top+"px";
+        menu_access.classList.add('open_menu_access');
+    }
+
+    //head_menu_access.classList.add('open_head_menu_access');
 });
 close_menu_access.addEventListener('click', () => {
     menu_access.classList.remove('open_menu_access')
