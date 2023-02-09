@@ -620,9 +620,10 @@ body::-webkit-scrollbar-thumb{
 /* fast access */
 .section_fast_access{
     padding: 60px 0px 100px;
-    background-color: #ccffcc;
+    /*background-color: #ccffcc;*/
     position: relative;
 }
+/*
 .section_fast_access::before{
     content: "";
     width: 200%;
@@ -631,6 +632,12 @@ body::-webkit-scrollbar-thumb{
     position: absolute;
     top: 0;
     left: -50%;
+}
+*/
+.carousel_fast_access{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .carousel_fast_access.owl-carousel{
     padding-bottom: 10px;
@@ -643,20 +650,22 @@ body::-webkit-scrollbar-thumb{
 }
 .carousel_fast_access a{
     text-align: center;
-    margin: 10px 0;
+    margin: 10px;
     border: 1px solid #343434!important;
     font-size: 1.1em;
     color: #013700!important;
     cursor: pointer;
     background-color: var(--color-white);
+    flex-basis: calc(33.33% - 20px);
 }
 .carousel_fast_access a img{
-    width: 75px!important;
+    width: 50%!important;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .carousel_fast_access a span{
     width: 100%;
+    margin-bottom: 40px;
 }
 .carousel_fast_access a{
     border: 1px solid #787878;
@@ -667,16 +676,25 @@ body::-webkit-scrollbar-thumb{
     color: var(--color-black);
     text-align: center;
     text-decoration: none;
+    transition: all .23s;
 }
 .section_fast_access header h2 {
     border: none;
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 3em!important;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
     margin-bottom: 40px;
+    color: var(--color-black)!important;
+}
+.carousel_fast_access a:hover{
+    background-color: #178429;
+    color: var(--color-white)!important;
+}
+.carousel_fast_access a:hover span{
+    color: var(--color-white);
 }
 /* fast access */
 
@@ -965,6 +983,7 @@ body::-webkit-scrollbar-thumb{
     position: relative;
     text-transform: uppercase;
     margin-bottom: 40px;
+    color: var(--color-black)!important;
 }
 .galeria_dev h2::after {
     content: "";
@@ -1070,11 +1089,12 @@ a.btn_galeria:hover{
     border: none;
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 3em!important;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
     margin-bottom: 40px;
+    color: var(--color-black)!important;
 }
 .phot h2::after {
     content: "";
@@ -1161,11 +1181,12 @@ a.btn_galeria:hover{
     border: none;
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 3em!important;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
     margin-bottom: 40px;
+    color: var(--color-black)!important;
 }
 .carousel_vereador header h2::after {
     content: "";
@@ -1283,6 +1304,7 @@ a.btn_galeria:hover{
     padding: 40px 10px;
     display: block;
     position: relative;
+    z-index: 1;
 }
 .container_videos::before{
     content: "";
@@ -1328,13 +1350,13 @@ a.btn_galeria:hover{
     border: none;
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 3em!important;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
     margin: 0;
     margin-bottom: 40px;
-    color: #fff;
+    color: #fff!important;
 }
 .container_videos header h2::after {
     content: "";
@@ -1794,6 +1816,12 @@ a.btn_galeria:hover{
     }
     .search_over_content #portal-searchbox form input{
         font-size: 1.4em!important;
+    }
+    .carousel_fast_access a{
+        flex-basis: calc(50% - 20px);
+    }
+    .carousel_fast_access a img{
+        margin-bottom: 20px;
     }
 }
 
