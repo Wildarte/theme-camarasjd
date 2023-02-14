@@ -90,7 +90,7 @@ if(hero_slide_uni){
         if(uni == hero_slide_uni.length){
             uni = 0
         }
-    }, 6000);
+    }, 10000);
 
     setInterval(function(){
 
@@ -120,7 +120,7 @@ if(hero_slide_uni){
         if(uni2 == info_slide_single.length){
             uni2 = 0
         }
-    }, 3000);
+    }, 5000);
 
 }
 /*
@@ -341,3 +341,11 @@ itens_hover.forEach((item, index) => {
 });
 */
 //================================ effect itens menu hover ===================================
+
+
+//============================ put a padding in #content ======================================
+if(url_home != "/"){
+    document.querySelector('#content').classList.add('content_page_interno');
+}
+//============================ put a padding in #content ======================================
+

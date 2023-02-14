@@ -5,6 +5,7 @@
     --color-main: #69B652;
     --color-dark-main: #365e2a;
     --color-yellow: #FEF086;
+    --color-dark-green: #274620;
 
     --color-white: #ffffff;
     --color-black: #000000;
@@ -63,6 +64,9 @@ body::-webkit-scrollbar-thumb{
 }
 .title-default{
 
+}
+.btn-default-hover:hover{
+    transform: scale(1.1);
 }
 /* general style */
 
@@ -196,6 +200,14 @@ body::-webkit-scrollbar-thumb{
     color: var(--color-white)!important;
     font-size: 2em;
     border-radius: 20px;
+    transition: all .23s;
+}
+.info_slide_single a.link_slide_single:hover{
+    background-color: transparent;
+    transform: scale(1.05);
+    border: 1px solid var(--color-dark-main);
+    color: var(--color-dark-main)!important;
+    background-color: var(--color-white);
 }
 #header > div{
     max-width: 100%;
@@ -656,7 +668,7 @@ body::-webkit-scrollbar-thumb{
     color: #013700!important;
     cursor: pointer;
     background-color: var(--color-white);
-    flex-basis: calc(33.33% - 20px);
+    flex-basis: calc(20% - 20px);
 }
 .carousel_fast_access a img{
     width: 50%!important;
@@ -685,9 +697,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 3em!important;
     font-weight: 500;
     position: relative;
-    text-transform: uppercase;
+    text-transform: capitalize!important;
     margin-bottom: 40px;
-    color: var(--color-black)!important;
+    color: var(--color-dark-green)!important;
 }
 .carousel_fast_access a:hover{
     background-color: #178429;
@@ -808,15 +820,14 @@ body::-webkit-scrollbar-thumb{
     background: transparent!important;
     font-size: unset;
     color: var(--color-black);
+    padding: 10px!important;
 }
 .title-default::after{
     content: "";
-    width: 100%!important;
+    width: 100px!important;
     height: 4px;
-    margin-top: 20px!important;
-    background-image: linear-gradient(to right, #24420C, rgba(255,255,255, .99));
     display: flex;
-    margin: auto;
+    background-color: #24420C;
 }
 .container{
     max-width: 1200px;
@@ -827,19 +838,19 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     text-align: center;
     font-size: 3em;
-    font-weight: 500;
+    font-weight: 400;
     position: relative;
     text-align: left;
+    padding: 10px;
+    text-transform: capitalize;
+    color: var(--color-dark-green);
 }
 .separador_bloco::after{
     content: "";
-    width: 100%;
+    width: 100px;
     height: 4px;
-    margin-top: 20px!important;
     background-color: #24420C;
     display: flex;
-    margin: auto;
-    background-image: linear-gradient(to right, #24420C, rgba(255,255,255, .99));
 }
 .separador_bloco svg{
     display: none;
@@ -981,9 +992,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 3em!important;
     font-weight: 500;
     position: relative;
-    text-transform: uppercase;
+    text-transform: capitalize!important;
     margin-bottom: 40px;
-    color: var(--color-black)!important;
+    color: var(--color-dark-green)!important;
 }
 .galeria_dev h2::after {
     content: "";
@@ -992,7 +1003,6 @@ body::-webkit-scrollbar-thumb{
     margin-top: 10px!important;
     background-color: #24420C;
     display: flex;
-    margin: auto;
 }
 .links_galeria{
     display: flex;
@@ -1037,6 +1047,8 @@ body::-webkit-scrollbar-thumb{
 .bottom_galeria{
     padding: 40px 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .tile a.btn_galeria{
     color: #ffffff!important;
@@ -1092,9 +1104,10 @@ a.btn_galeria:hover{
     font-size: 3em!important;
     font-weight: 500;
     position: relative;
-    text-transform: uppercase;
+    text-transform: capitalize!important;
     margin-bottom: 40px;
-    color: var(--color-black)!important;
+    color: var(--color-dark-green)!important;
+    padding: 10px;
 }
 .phot h2::after {
     content: "";
@@ -1103,7 +1116,6 @@ a.btn_galeria:hover{
     margin-top: 10px!important;
     background-color: #24420C;
     display: flex;
-    margin: auto;
 }
 .phot_left img{
     max-width: 100%;
@@ -1125,15 +1137,18 @@ a.btn_galeria:hover{
     padding: 10px 10px 40px 0;
 }
 .bottom_phot{
-    padding: 10px;
+    padding: 10px 0;
+    text-align: left;
 }
 .phot_right h4{
     font-size: 1.5em;
     font-weight: 400;
+    text-align: left;
 }
 .phot_right h3{
     font-size: 2.5em;
     font-weight: 600;
+    text-align: left;
 }
 .phot_right p{
     display: block!important;
@@ -1184,9 +1199,9 @@ a.btn_galeria:hover{
     font-size: 3em!important;
     font-weight: 500;
     position: relative;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    color: var(--color-black)!important;
+    text-transform: capitalize!important;
+    margin-bottom: 30px!important;
+    color: var(--color-dark-green)!important;
 }
 .carousel_vereador header h2::after {
     content: "";
@@ -1195,7 +1210,6 @@ a.btn_galeria:hover{
     margin-top: 10px!important;
     background-color: #24420C;
     display: flex;
-    margin: auto;
 }
 .carousel_vereador .owl-nav button{
     position: absolute;
@@ -1353,7 +1367,7 @@ a.btn_galeria:hover{
     font-size: 3em!important;
     font-weight: 500;
     position: relative;
-    text-transform: uppercase;
+    text-transform: capitalize!important;
     margin: 0;
     margin-bottom: 40px;
     color: #fff!important;
@@ -1365,7 +1379,6 @@ a.btn_galeria:hover{
     margin-top: 10px!important;
     background-color: #fff;
     display: flex;
-    margin: auto;
 }
 .container_videos .owl-nav button{
     position: absolute;
@@ -1475,6 +1488,9 @@ a.btn_galeria:hover{
 .btn_videos i{
     margin-left: 10px;
 }
+.tile a.btn_videos{
+    color: #ffffff!important;
+}
 .redes_sociais_menu, .over_screen, .logo_menu_mobile{
     display: none;
 }
@@ -1491,6 +1507,14 @@ a.btn_galeria:hover{
     width: 100%;
     height: 100%;
     z-index: 100;
+}
+.content_page_interno{
+    padding: 10px;
+}
+.content_page_interno p{
+    font-size: 1.35em!important;
+    line-height: 1.5em;
+    font-weight: 300;
 }
 @media(max-width: 1080px){
     .container_videos iframe{
@@ -1866,7 +1890,7 @@ a.btn_galeria:hover{
     .title-default{
         font-size: 1.8em!important;
     }
-    
+
 }
 
 @media(max-width: 480px){
@@ -1878,5 +1902,11 @@ a.btn_galeria:hover{
     }
     .hero_top #portal-logo img{
         width: 50px;
+    }
+    .content_page_interno h1.documentFirstHeading{
+        font-size: 2em!important;
+    }
+    .content_page_interno p{
+        font-size: 1.1em!important;
     }
 }
