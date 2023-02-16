@@ -33,10 +33,16 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/myStyle.css">
     
-
 </head>
 
 <body>
+
+
+
+    <!-- add os script -->
+    <div class="set_script"></div>
+    <!-- add os script -->
+
     
     <div class="search_over" id="from_top">
         <span class="btn_slose_search" id="btn_slose_search">
@@ -402,8 +408,16 @@
             if(url_home == "/Plone"){
                 document.querySelector('.hero').style.display = "none"
                 document.querySelector('.hero_top').classList.add('bg-dark-green');
+            }else{
+                let script_f = document.createElement('script');
+                script_f.setAttribute('src', 'https://www.saojosedodivino.pi.leg.br/++theme++my-theme-cam-sjd/javascript/jquery-3.6.0.min.js');
+                document.querySelector('.set_script').append(script_f)
+
+                let script_f2 = document.createElement('script');
+                script_f2.setAttribute('src', 'https://www.saojosedodivino.pi.leg.br/++theme++my-theme-cam-sjd/javascript/owl.carousel.min.js');
+                document.querySelector('.set_script').append(script_f2);
             }
-            document.querySelector('.content_inset').style.padding = "10px";
+            //document.querySelector('.content_inset').style.padding = "10px";
     
         </script>
     <!-- content -->

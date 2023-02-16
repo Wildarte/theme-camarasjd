@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }else{
         hero.style.marginTop = "-"+(height_top+15)+"px";
-        hero.style.height = "calc(100vh)";
+        hero.style.height = "calc(100vh + 15px)";
     }
 
 });
@@ -342,10 +342,39 @@ itens_hover.forEach((item, index) => {
 */
 //================================ effect itens menu hover ===================================
 
+// ============= carousel vereadores ==================================================
+if(document.querySelector('.content_carousel_vereador')){
+    setTimeout(function(){
+        $(".content_carousel_vereador").owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+    }, 1500)
+
+}
+
+// ============= carousel vereadores ==================================================
+
+
 
 //============================ put a padding in #content ======================================
 if(url_home != "/"){
     document.querySelector('#content').classList.add('content_page_interno');
+   
 }
 //============================ put a padding in #content ======================================
-
